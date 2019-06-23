@@ -1,0 +1,727 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ACTION	proto/gps_pb2.py	/^ACTION = 0$/;"	v
+AGENT	agent/config.py	/^AGENT = {$/;"	v
+AGENT_BOX2D	agent/config.py	/^AGENT_BOX2D = {$/;"	v
+AGENT_MUJOCO	agent/config.py	/^AGENT_MUJOCO = {$/;"	v
+AGENT_ROS	agent/config.py	/^    AGENT_ROS = {$/;"	v
+AGENT_ROS	agent/config.py	/^    AGENT_ROS = {}$/;"	v
+ALG	algorithm/config.py	/^ALG = {$/;"	v
+ALG_BADMM	algorithm/config.py	/^ALG_BADMM = {$/;"	v
+ALG_MDGPS	algorithm/config.py	/^ALG_MDGPS = {$/;"	v
+ALG_MDGPS_PILQR	algorithm/config.py	/^ALG_MDGPS_PILQR = {$/;"	v
+ALG_PI2	algorithm/config.py	/^ALG_PI2 = {$/;"	v
+ALG_PIGPS	algorithm/config.py	/^ALG_PIGPS = {    $/;"	v
+ALG_PILQR	algorithm/config.py	/^ALG_PILQR = {$/;"	v
+AUXILIARY_ARM	proto/gps_pb2.py	/^AUXILIARY_ARM = 1$/;"	v
+Action	gui/action_panel.py	/^class Action:$/;"	c
+ActionPanel	gui/action_panel.py	/^class ActionPanel:$/;"	c
+ActuatorType	proto/gps_pb2.py	/^ActuatorType = enum_type_wrapper.EnumTypeWrapper(_ACTUATORTYPE)$/;"	v
+Agent	agent/agent.py	/^class Agent(object):$/;"	c
+AgentBox2D	agent/box2d/agent_box2d.py	/^class AgentBox2D(Agent):$/;"	c
+AgentMuJoCo	agent/mjc/agent_mjc.py	/^class AgentMuJoCo(Agent):$/;"	c
+AgentROS	agent/ros/agent_ros.py	/^class AgentROS(Agent):$/;"	c
+Algorithm	algorithm/algorithm.py	/^class Algorithm(object):$/;"	c
+AlgorithmBADMM	algorithm/algorithm_badmm.py	/^class AlgorithmBADMM(Algorithm):$/;"	c
+AlgorithmMDGPS	algorithm/algorithm_mdgps.py	/^class AlgorithmMDGPS(Algorithm):$/;"	c
+AlgorithmMDGPSPILQR	algorithm/algorithm_mdgps_pilqr.py	/^class AlgorithmMDGPSPILQR(AlgorithmMDGPS, AlgorithmTrajOptPILQR):$/;"	c
+AlgorithmPIGPS	algorithm/algorithm_pigps.py	/^class AlgorithmPIGPS(AlgorithmMDGPS):$/;"	c
+AlgorithmTrajOpt	algorithm/algorithm_traj_opt.py	/^class AlgorithmTrajOpt(Algorithm):$/;"	c
+AlgorithmTrajOptPI2	algorithm/algorithm_traj_opt_pi2.py	/^class AlgorithmTrajOptPI2(Algorithm):$/;"	c
+AlgorithmTrajOptPILQR	algorithm/algorithm_traj_opt_pilqr.py	/^class AlgorithmTrajOptPILQR(Algorithm):$/;"	c
+ArmWorld	agent/box2d/arm_world.py	/^class ArmWorld(Framework):$/;"	c
+BundleType	utility/general_utils.py	/^class BundleType(object):$/;"	c
+CAFFE_CONTROLLER	proto/gps_pb2.py	/^CAFFE_CONTROLLER = 1$/;"	v
+CONTEXT_IMAGE	proto/gps_pb2.py	/^CONTEXT_IMAGE = 14$/;"	v
+CONTEXT_IMAGE_SIZE	proto/gps_pb2.py	/^CONTEXT_IMAGE_SIZE = 15$/;"	v
+COST_ACTION	algorithm/cost/config.py	/^COST_ACTION = {$/;"	v
+COST_BINARY_REGION	algorithm/cost/config.py	/^COST_BINARY_REGION = {$/;"	v
+COST_FK	algorithm/cost/config.py	/^COST_FK = {$/;"	v
+COST_LIN_WP	algorithm/cost/config.py	/^COST_LIN_WP = {$/;"	v
+COST_STATE	algorithm/cost/config.py	/^COST_STATE = {$/;"	v
+COST_SUM	algorithm/cost/config.py	/^COST_SUM = {$/;"	v
+CaffePolicy	algorithm/policy/caffe_policy.py	/^class CaffePolicy(Policy):$/;"	c
+ControllerType	proto/gps_pb2.py	/^ControllerType = enum_type_wrapper.EnumTypeWrapper(_CONTROLLERTYPE)$/;"	v
+ConvertScreenToWorld	agent/box2d/pygame_framework.py	/^    def ConvertScreenToWorld(self, x, y):$/;"	m	class:PygameFramework
+Cost	algorithm/cost/cost.py	/^class Cost(object):$/;"	c
+CostAction	algorithm/cost/cost_action.py	/^class CostAction(Cost):$/;"	c
+CostBinaryRegion	algorithm/cost/cost_binary_region.py	/^class CostBinaryRegion(Cost):$/;"	c
+CostFK	algorithm/cost/cost_fk.py	/^class CostFK(Cost):$/;"	c
+CostFKBlock	algorithm/cost/cost_fk_blocktouch.py	/^class CostFKBlock(Cost):$/;"	c
+CostLinWP	algorithm/cost/cost_lin_wp.py	/^class CostLinWP(Cost):$/;"	c
+CostState	algorithm/cost/cost_state.py	/^class CostState(Cost):$/;"	c
+CostSum	algorithm/cost/cost_sum.py	/^class CostSum(Cost):$/;"	c
+DEFAULT_END_EFFECTOR_POSITIONS	gui/util.py	/^DEFAULT_END_EFFECTOR_POSITIONS = np.zeros(3)$/;"	v
+DEFAULT_END_EFFECTOR_ROTATIONS	gui/util.py	/^DEFAULT_END_EFFECTOR_ROTATIONS = np.zeros((3, 3))$/;"	v
+DEFAULT_JOINT_ANGLES	gui/util.py	/^DEFAULT_JOINT_ANGLES = np.zeros(7)$/;"	v
+DEPTH_IMAGE	proto/gps_pb2.py	/^DEPTH_IMAGE = 12$/;"	v
+DESCRIPTOR	proto/gps_pb2.py	/^  DESCRIPTOR = _SAMPLE,$/;"	v
+DESCRIPTOR	proto/gps_pb2.py	/^DESCRIPTOR = _descriptor.FileDescriptor($/;"	v
+DEVNULL	gui/target_setup_gui.py	/^DEVNULL = open(os.devnull, 'wb')$/;"	v
+DGD_MAX_GD_ITER	algorithm/traj_opt/traj_opt_utils.py	/^DGD_MAX_GD_ITER = 200$/;"	v
+DGD_MAX_ITER	algorithm/traj_opt/traj_opt_utils.py	/^DGD_MAX_ITER = 50$/;"	v
+DGD_MAX_LS_ITER	algorithm/traj_opt/traj_opt_utils.py	/^DGD_MAX_LS_ITER = 20$/;"	v
+DYN_PRIOR_GMM	algorithm/dynamics/config.py	/^DYN_PRIOR_GMM = {$/;"	v
+DataLogger	utility/data_logger.py	/^class DataLogger(object):$/;"	c
+DrawAABB	agent/box2d/pygame_framework.py	/^    def DrawAABB(self, aabb, color):$/;"	m	class:PygameDraw
+DrawCircle	agent/box2d/pygame_framework.py	/^    def DrawCircle(self, center, radius, color, drawwidth=1):$/;"	m	class:PygameDraw
+DrawPoint	agent/box2d/pygame_framework.py	/^    def DrawPoint(self, p, size, color):$/;"	m	class:PygameDraw
+DrawPolygon	agent/box2d/pygame_framework.py	/^    def DrawPolygon(self, vertices, color):$/;"	m	class:PygameDraw
+DrawSegment	agent/box2d/pygame_framework.py	/^    def DrawSegment(self, p1, p2, color):$/;"	m	class:PygameDraw
+DrawSolidCircle	agent/box2d/pygame_framework.py	/^    def DrawSolidCircle(self, center, radius, axis, color):$/;"	m	class:PygameDraw
+DrawSolidPolygon	agent/box2d/pygame_framework.py	/^    def DrawSolidPolygon(self, vertices, color):$/;"	m	class:PygameDraw
+DrawStringAt	agent/box2d/pygame_framework.py	/^    def DrawStringAt(self, x, y, s, color=(229, 153, 153, 255)):$/;"	m	class:PygameFramework
+DrawTransform	agent/box2d/pygame_framework.py	/^    def DrawTransform(self, xf):$/;"	m	class:PygameDraw
+Dynamics	algorithm/dynamics/dynamics.py	/^class Dynamics(object):$/;"	c
+DynamicsLR	algorithm/dynamics/dynamics_lr.py	/^class DynamicsLR(Dynamics):$/;"	c
+DynamicsLRPrior	algorithm/dynamics/dynamics_lr_prior.py	/^class DynamicsLRPrior(Dynamics):$/;"	c
+DynamicsPriorGMM	algorithm/dynamics/dynamics_prior_gmm.py	/^class DynamicsPriorGMM(object):$/;"	c
+END_EFFECTOR_HESSIANS	proto/gps_pb2.py	/^END_EFFECTOR_HESSIANS = 10$/;"	v
+END_EFFECTOR_JACOBIANS	proto/gps_pb2.py	/^END_EFFECTOR_JACOBIANS = 9$/;"	v
+END_EFFECTOR_POINTS	proto/gps_pb2.py	/^END_EFFECTOR_POINTS = 3$/;"	v
+END_EFFECTOR_POINTS_NO_TARGET	proto/gps_pb2.py	/^END_EFFECTOR_POINTS_NO_TARGET = 17$/;"	v
+END_EFFECTOR_POINT_JACOBIANS	proto/gps_pb2.py	/^END_EFFECTOR_POINT_JACOBIANS = 5$/;"	v
+END_EFFECTOR_POINT_ROT_JACOBIANS	proto/gps_pb2.py	/^END_EFFECTOR_POINT_ROT_JACOBIANS = 6$/;"	v
+END_EFFECTOR_POINT_VELOCITIES	proto/gps_pb2.py	/^END_EFFECTOR_POINT_VELOCITIES = 4$/;"	v
+END_EFFECTOR_POINT_VELOCITIES_NO_TARGET	proto/gps_pb2.py	/^END_EFFECTOR_POINT_VELOCITIES_NO_TARGET = 18$/;"	v
+END_EFFECTOR_POSITIONS	proto/gps_pb2.py	/^END_EFFECTOR_POSITIONS = 7$/;"	v
+END_EFFECTOR_ROTATIONS	proto/gps_pb2.py	/^END_EFFECTOR_ROTATIONS = 8$/;"	v
+EndDraw	agent/box2d/pygame_framework.py	/^    def EndDraw(self):$/;"	m	class:PygameDraw
+Framework	agent/box2d/framework.py	/^Framework = getattr(framework_module, '%sFramework' %$/;"	v
+FrameworkBase	agent/box2d/framework.py	/^class FrameworkBase(b2.b2ContactListener):$/;"	c
+GENERIC_CONFIG	algorithm/policy_opt/config.py	/^GENERIC_CONFIG = {$/;"	v
+GMM	utility/gmm.py	/^class GMM(object):$/;"	c
+GPSMain	gps_main.py	/^class GPSMain(object):$/;"	c
+GPSTrainingGUI	gui/gps_training_gui.py	/^class GPSTrainingGUI(object):$/;"	c
+GUIEnabled	agent/box2d/pygame_framework.py	/^GUIEnabled = False$/;"	v
+IMAGE_FEAT	proto/gps_pb2.py	/^IMAGE_FEAT = 16$/;"	v
+INIT_LG_LQR	algorithm/policy/config.py	/^INIT_LG_LQR = {$/;"	v
+INIT_LG_PD	algorithm/policy/config.py	/^INIT_LG_PD = {$/;"	v
+INVERTED_PS3_AXIS	gui/ps3_config.py	/^INVERTED_PS3_AXIS = {value: key for key, value in PS3_AXIS.iteritems()}/;"	v
+INVERTED_PS3_BUTTON	gui/ps3_config.py	/^INVERTED_PS3_BUTTON = {value: key for key, value in PS3_BUTTON.iteritems()}$/;"	v
+ImageVisualizer	gui/image_visualizer.py	/^class ImageVisualizer(object):$/;"	c
+IterationData	algorithm/algorithm_utils.py	/^class IterationData(BundleType):$/;"	c
+JOINT_ANGLES	proto/gps_pb2.py	/^JOINT_ANGLES = 1$/;"	v
+JOINT_SPACE	proto/gps_pb2.py	/^JOINT_SPACE = 1$/;"	v
+JOINT_VELOCITIES	proto/gps_pb2.py	/^JOINT_VELOCITIES = 2$/;"	v
+LIN_GAUSS_CONTROLLER	proto/gps_pb2.py	/^LIN_GAUSS_CONTROLLER = 0$/;"	v
+LOGGER	agent/config.py	/^LOGGER = logging.getLogger(__name__)$/;"	v
+LOGGER	agent/ros/ros_utils.py	/^LOGGER = logging.getLogger(__name__)$/;"	v
+LOGGER	algorithm/algorithm.py	/^LOGGER = logging.getLogger(__name__)$/;"	v
+LOGGER	algorithm/algorithm_badmm.py	/^LOGGER = logging.getLogger(__name__)$/;"	v
+LOGGER	algorithm/algorithm_mdgps.py	/^LOGGER = logging.getLogger(__name__)$/;"	v
+LOGGER	algorithm/algorithm_mdgps_pilqr.py	/^LOGGER = logging.getLogger(__name__)$/;"	v
+LOGGER	algorithm/algorithm_pigps.py	/^LOGGER = logging.getLogger(__name__)$/;"	v
+LOGGER	algorithm/algorithm_traj_opt.py	/^LOGGER = logging.getLogger(__name__)$/;"	v
+LOGGER	algorithm/algorithm_traj_opt_pilqr.py	/^LOGGER = logging.getLogger(__name__)$/;"	v
+LOGGER	algorithm/dynamics/dynamics_prior_gmm.py	/^LOGGER = logging.getLogger(__name__)$/;"	v
+LOGGER	algorithm/policy/policy_prior_gmm.py	/^LOGGER = logging.getLogger(__name__)$/;"	v
+LOGGER	algorithm/policy_opt/policy_opt_caffe.py	/^LOGGER = logging.getLogger(__name__)$/;"	v
+LOGGER	algorithm/policy_opt/policy_opt_tf.py	/^LOGGER = logging.getLogger(__name__)$/;"	v
+LOGGER	algorithm/traj_opt/traj_opt_lqr_python.py	/^LOGGER = logging.getLogger(__name__)$/;"	v
+LOGGER	algorithm/traj_opt/traj_opt_pi2.py	/^LOGGER = logging.getLogger(__name__)$/;"	v
+LOGGER	algorithm/traj_opt/traj_opt_pilqr.py	/^LOGGER = logging.getLogger(__name__)$/;"	v
+LOGGER	algorithm/traj_opt/traj_opt_utils.py	/^LOGGER = logging.getLogger(__name__)$/;"	v
+LOGGER	gui/action_panel.py	/^LOGGER = logging.getLogger(__name__)$/;"	v
+LOGGER	gui/image_visualizer.py	/^LOGGER = logging.getLogger(__name__)$/;"	v
+LOGGER	gui/target_setup_gui.py	/^LOGGER = logging.getLogger(__name__)$/;"	v
+LOGGER	sample/sample_list.py	/^LOGGER = logging.getLogger(__name__)$/;"	v
+LOGGER	utility/data_logger.py	/^LOGGER = logging.getLogger(__name__)$/;"	v
+LOGGER	utility/gmm.py	/^LOGGER = logging.getLogger(__name__)$/;"	v
+LinearGaussianPolicy	algorithm/policy/lin_gauss_policy.py	/^class LinearGaussianPolicy(Policy):$/;"	c
+MeanPlotter	gui/mean_plotter.py	/^class MeanPlotter:$/;"	c
+NOISE	proto/gps_pb2.py	/^NOISE = 19$/;"	v
+NO_CAFFE	agent/ros/ros_utils.py	/^    NO_CAFFE = False$/;"	v
+NO_CAFFE	agent/ros/ros_utils.py	/^    NO_CAFFE = True$/;"	v
+NO_CONTROL	proto/gps_pb2.py	/^NO_CONTROL = 0$/;"	v
+POLICY_OPT_CAFFE	algorithm/policy_opt/config.py	/^POLICY_OPT_CAFFE = {$/;"	v
+POLICY_OPT_TF	algorithm/policy_opt/config.py	/^POLICY_OPT_TF = {$/;"	v
+POLICY_PRIOR	algorithm/policy/config.py	/^POLICY_PRIOR = {$/;"	v
+POLICY_PRIOR_GMM	algorithm/policy/config.py	/^POLICY_PRIOR_GMM = {$/;"	v
+PS3_AXIS	gui/ps3_config.py	/^PS3_AXIS = {$/;"	v
+PS3_BUTTON	gui/ps3_config.py	/^PS3_BUTTON = {$/;"	v
+PickleSampleWriter	sample/sample_list.py	/^class PickleSampleWriter(object):$/;"	c
+Plotter3D	gui/plotter_3d.py	/^class Plotter3D:$/;"	c
+PointMassWorld	agent/box2d/point_mass_world.py	/^class PointMassWorld(Framework):$/;"	c
+Policy	algorithm/policy/policy.py	/^class Policy(object):$/;"	c
+PolicyDataLayer	algorithm/policy_opt/policy_layers.py	/^class PolicyDataLayer(caffe.Layer):$/;"	c
+PolicyInfo	algorithm/algorithm_utils.py	/^class PolicyInfo(BundleType):$/;"	c
+PolicyOpt	algorithm/policy_opt/policy_opt.py	/^class PolicyOpt(object):$/;"	c
+PolicyOptCaffe	algorithm/policy_opt/policy_opt_caffe.py	/^class PolicyOptCaffe(PolicyOpt):$/;"	c
+PolicyOptTf	algorithm/policy_opt/policy_opt_tf.py	/^class PolicyOptTf(PolicyOpt):$/;"	c
+PolicyPrior	algorithm/policy/policy_prior.py	/^class PolicyPrior(object):$/;"	c
+PolicyPriorGMM	algorithm/policy/policy_prior_gmm.py	/^class PolicyPriorGMM(object):$/;"	c
+PositionControlMode	proto/gps_pb2.py	/^PositionControlMode = enum_type_wrapper.EnumTypeWrapper(_POSITIONCONTROLMODE)$/;"	v
+PreSolve	agent/box2d/framework.py	/^    def PreSolve(self, contact, old_manifold):$/;"	m	class:FrameworkBase
+Print	agent/box2d/pygame_framework.py	/^    def Print(self, s, color=(229, 153, 153, 255)):$/;"	m	class:PygameFramework
+PygameDraw	agent/box2d/pygame_framework.py	/^class PygameDraw(b2.b2DrawExtended):$/;"	c
+PygameFramework	agent/box2d/pygame_framework.py	/^class PygameFramework(framework.FrameworkBase):$/;"	c
+RAMP_CONSTANT	algorithm/cost/cost_utils.py	/^RAMP_CONSTANT = 1$/;"	v
+RAMP_FINAL_ONLY	algorithm/cost/cost_utils.py	/^RAMP_FINAL_ONLY = 4$/;"	v
+RAMP_LINEAR	algorithm/cost/cost_utils.py	/^RAMP_LINEAR = 2$/;"	v
+RAMP_QUADRATIC	algorithm/cost/cost_utils.py	/^RAMP_QUADRATIC = 3$/;"	v
+RGB_IMAGE	proto/gps_pb2.py	/^RGB_IMAGE = 11$/;"	v
+RGB_IMAGE_SIZE	proto/gps_pb2.py	/^RGB_IMAGE_SIZE = 13$/;"	v
+ROS_ENABLED	gui/action_panel.py	/^    ROS_ENABLED = True$/;"	v
+ROS_ENABLED	gui/action_panel.py	/^ROS_ENABLED = False$/;"	v
+ROS_ENABLED	gui/image_visualizer.py	/^    ROS_ENABLED = True$/;"	v
+ROS_ENABLED	gui/image_visualizer.py	/^ROS_ENABLED = False$/;"	v
+ROS_ENABLED	gui/target_setup_gui.py	/^    ROS_ENABLED = True$/;"	v
+ROS_ENABLED	gui/target_setup_gui.py	/^ROS_ENABLED = False$/;"	v
+RealtimePlotter	gui/realtime_plotter.py	/^class RealtimePlotter(object):$/;"	c
+ReportFixture	agent/box2d/framework.py	/^    def ReportFixture(self, fixture):$/;"	m	class:fwQueryCallback
+Sample	proto/gps_pb2.py	/^Sample = _reflection.GeneratedProtocolMessageType('Sample', (_message.Message,), dict($/;"	v
+Sample	sample/sample.py	/^class Sample(object):$/;"	c
+SampleList	sample/sample_list.py	/^class SampleList(object):$/;"	c
+SampleType	proto/gps_pb2.py	/^SampleType = enum_type_wrapper.EnumTypeWrapper(_SAMPLETYPE)$/;"	v
+ServiceEmulator	agent/ros/ros_utils.py	/^class ServiceEmulator(object):$/;"	c
+SimulationLoop	agent/box2d/framework.py	/^    def SimulationLoop(self, action):$/;"	m	class:FrameworkBase
+StartDraw	agent/box2d/pygame_framework.py	/^    def StartDraw(self):$/;"	m	class:PygameDraw
+Step	agent/box2d/arm_world.py	/^    def Step(self, settings, action):$/;"	m	class:ArmWorld
+Step	agent/box2d/framework.py	/^    def Step(self, settings, action=None):$/;"	m	class:FrameworkBase
+Step	agent/box2d/point_mass_world.py	/^    def Step(self, settings, action):$/;"	m	class:PointMassWorld
+Step	agent/box2d/pygame_framework.py	/^    def Step(self, settings):$/;"	m	class:PygameFramework
+SysOutWriter	sample/sample_list.py	/^class SysOutWriter(object):$/;"	c
+TASK_SPACE	proto/gps_pb2.py	/^TASK_SPACE = 2$/;"	v
+TEXTLINE_START	agent/box2d/framework.py	/^    TEXTLINE_START = 30$/;"	v	class:FrameworkBase
+TF_CONTROLLER	proto/gps_pb2.py	/^TF_CONTROLLER = 2$/;"	v
+TOTAL_ACTUATOR_TYPES	proto/gps_pb2.py	/^TOTAL_ACTUATOR_TYPES = 2$/;"	v
+TOTAL_CONTROLLER_TYPES	proto/gps_pb2.py	/^TOTAL_CONTROLLER_TYPES = 3$/;"	v
+TOTAL_CONTROL_MODES	proto/gps_pb2.py	/^TOTAL_CONTROL_MODES = 3$/;"	v
+TOTAL_DATA_TYPES	proto/gps_pb2.py	/^TOTAL_DATA_TYPES = 20$/;"	v
+TRAJ_OPT_LQR	algorithm/traj_opt/config.py	/^TRAJ_OPT_LQR = {$/;"	v
+TRAJ_OPT_PI2	algorithm/traj_opt/config.py	/^TRAJ_OPT_PI2 = {  $/;"	v
+TRAJ_OPT_PILQR	algorithm/traj_opt/config.py	/^TRAJ_OPT_PILQR = {$/;"	v
+TRIAL_ARM	proto/gps_pb2.py	/^TRIAL_ARM = 0$/;"	v
+TargetSetupGUI	gui/target_setup_gui.py	/^class TargetSetupGUI(object):$/;"	c
+Textbox	gui/textbox.py	/^class Textbox:$/;"	c
+TfMap	algorithm/policy_opt/tf_utils.py	/^class TfMap:$/;"	c
+TfPolicy	agent/ros/agent_ros.py	/^    TfPolicy = None$/;"	v
+TfPolicy	agent/ros/ros_utils.py	/^    TfPolicy = None$/;"	v
+TfPolicy	algorithm/policy/tf_policy.py	/^class TfPolicy(Policy):$/;"	c
+TfSolver	algorithm/policy_opt/tf_utils.py	/^class TfSolver:$/;"	c
+TimeoutException	agent/ros/ros_utils.py	/^class TimeoutException(Exception):$/;"	c
+TrajOpt	algorithm/traj_opt/traj_opt.py	/^class TrajOpt(object):$/;"	c
+TrajOptLQR	algorithm/traj_opt/traj_opt_lqr.py	/^class TrajOptLQR(TrajOpt):$/;"	c
+TrajOptLQRPython	algorithm/traj_opt/traj_opt_lqr_python.py	/^class TrajOptLQRPython(TrajOpt):$/;"	c
+TrajOptPI2	algorithm/traj_opt/traj_opt_pi2.py	/^class TrajOptPI2(TrajOpt):$/;"	c
+TrajOptPILQR	algorithm/traj_opt/traj_opt_pilqr.py	/^class TrajOptPILQR(TrajOptLQRPython):$/;"	c
+TrajectoryInfo	algorithm/algorithm_utils.py	/^class TrajectoryInfo(BundleType):$/;"	c
+WeightedEuclideanLoss	algorithm/policy_opt/policy_layers.py	/^class WeightedEuclideanLoss(caffe.Layer):$/;"	c
+_ACTUATORTYPE	proto/gps_pb2.py	/^_ACTUATORTYPE = _descriptor.EnumDescriptor($/;"	v
+_CONTROLLERTYPE	proto/gps_pb2.py	/^_CONTROLLERTYPE = _descriptor.EnumDescriptor($/;"	v
+_POSITIONCONTROLMODE	proto/gps_pb2.py	/^_POSITIONCONTROLMODE = _descriptor.EnumDescriptor($/;"	v
+_SAMPLE	proto/gps_pb2.py	/^_SAMPLE = _descriptor.Descriptor($/;"	v
+_SAMPLETYPE	proto/gps_pb2.py	/^_SAMPLETYPE = _descriptor.EnumDescriptor($/;"	v
+__call__	algorithm/policy_opt/tf_utils.py	/^    def __call__(self, feed_dict, sess, device_string="\/cpu:0", use_fc_solver=False):$/;"	m	class:TfSolver	file:
+__del__	agent/box2d/framework.py	/^    def __del__(self):$/;"	m	class:FrameworkBase	file:
+__getitem__	sample/sample_list.py	/^    def __getitem__(self, idx):$/;"	m	class:SampleList	file:
+__getstate__	algorithm/algorithm.py	/^    def __getstate__(self):$/;"	m	class:Algorithm	file:
+__getstate__	algorithm/policy_opt/policy_opt_caffe.py	/^    def __getstate__(self):$/;"	m	class:PolicyOptCaffe	file:
+__getstate__	algorithm/policy_opt/policy_opt_tf.py	/^    def __getstate__(self):$/;"	m	class:PolicyOptTf	file:
+__getstate__	sample/sample.py	/^    def __getstate__(self):$/;"	m	class:Sample	file:
+__init__	agent/agent.py	/^    def __init__(self, hyperparams):$/;"	m	class:Agent
+__init__	agent/box2d/agent_box2d.py	/^    def __init__(self, hyperparams):$/;"	m	class:AgentBox2D
+__init__	agent/box2d/arm_world.py	/^    def __init__(self, x0, target, render):$/;"	m	class:ArmWorld
+__init__	agent/box2d/framework.py	/^    def __init__(self):$/;"	m	class:FrameworkBase
+__init__	agent/box2d/framework.py	/^    def __init__(self, p):$/;"	m	class:fwQueryCallback
+__init__	agent/box2d/point_mass_world.py	/^    def __init__(self, x0, target, render):$/;"	m	class:PointMassWorld
+__init__	agent/box2d/pygame_framework.py	/^    def __init__(self):$/;"	m	class:PygameFramework
+__init__	agent/box2d/pygame_framework.py	/^    def __init__(self, test=None, **kwargs):$/;"	m	class:PygameDraw
+__init__	agent/mjc/agent_mjc.py	/^    def __init__(self, hyperparams):$/;"	m	class:AgentMuJoCo
+__init__	agent/ros/agent_ros.py	/^    def __init__(self, hyperparams, init_node=True):$/;"	m	class:AgentROS
+__init__	agent/ros/ros_utils.py	/^    def __init__(self, pub_topic, pub_type, sub_topic, sub_type):$/;"	m	class:ServiceEmulator
+__init__	agent/ros/ros_utils.py	/^    def __init__(self, sec_waited):$/;"	m	class:TimeoutException
+__init__	algorithm/algorithm.py	/^    def __init__(self, hyperparams):$/;"	m	class:Algorithm
+__init__	algorithm/algorithm_badmm.py	/^    def __init__(self, hyperparams):$/;"	m	class:AlgorithmBADMM
+__init__	algorithm/algorithm_mdgps.py	/^    def __init__(self, hyperparams):$/;"	m	class:AlgorithmMDGPS
+__init__	algorithm/algorithm_mdgps_pilqr.py	/^    def __init__(self, hyperparams):$/;"	m	class:AlgorithmMDGPSPILQR
+__init__	algorithm/algorithm_pigps.py	/^    def __init__(self, hyperparams):$/;"	m	class:AlgorithmPIGPS
+__init__	algorithm/algorithm_traj_opt.py	/^    def __init__(self, hyperparams):$/;"	m	class:AlgorithmTrajOpt
+__init__	algorithm/algorithm_traj_opt_pi2.py	/^    def __init__(self, hyperparams):$/;"	m	class:AlgorithmTrajOptPI2
+__init__	algorithm/algorithm_traj_opt_pilqr.py	/^    def __init__(self, hyperparams):$/;"	m	class:AlgorithmTrajOptPILQR
+__init__	algorithm/algorithm_utils.py	/^    def __init__(self):$/;"	m	class:IterationData
+__init__	algorithm/algorithm_utils.py	/^    def __init__(self):$/;"	m	class:TrajectoryInfo
+__init__	algorithm/algorithm_utils.py	/^    def __init__(self, hyperparams):$/;"	m	class:PolicyInfo
+__init__	algorithm/cost/cost.py	/^    def __init__(self, hyperparams):$/;"	m	class:Cost
+__init__	algorithm/cost/cost_action.py	/^    def __init__(self, hyperparams):$/;"	m	class:CostAction
+__init__	algorithm/cost/cost_binary_region.py	/^    def __init__(self, hyperparams):$/;"	m	class:CostBinaryRegion
+__init__	algorithm/cost/cost_fk.py	/^    def __init__(self, hyperparams):$/;"	m	class:CostFK
+__init__	algorithm/cost/cost_fk_blocktouch.py	/^    def __init__(self, hyperparams):$/;"	m	class:CostFKBlock
+__init__	algorithm/cost/cost_lin_wp.py	/^    def __init__(self, hyperparams):$/;"	m	class:CostLinWP
+__init__	algorithm/cost/cost_state.py	/^    def __init__(self, hyperparams):$/;"	m	class:CostState
+__init__	algorithm/cost/cost_sum.py	/^    def __init__(self, hyperparams):$/;"	m	class:CostSum
+__init__	algorithm/dynamics/dynamics.py	/^    def __init__(self, hyperparams):$/;"	m	class:Dynamics
+__init__	algorithm/dynamics/dynamics_lr.py	/^    def __init__(self, hyperparams):$/;"	m	class:DynamicsLR
+__init__	algorithm/dynamics/dynamics_lr_prior.py	/^    def __init__(self, hyperparams):$/;"	m	class:DynamicsLRPrior
+__init__	algorithm/dynamics/dynamics_prior_gmm.py	/^    def __init__(self, hyperparams):$/;"	m	class:DynamicsPriorGMM
+__init__	algorithm/policy/caffe_policy.py	/^    def __init__(self, test_net, deploy_net, var):$/;"	m	class:CaffePolicy
+__init__	algorithm/policy/lin_gauss_policy.py	/^    def __init__(self, K, k, pol_covar, chol_pol_covar, inv_pol_covar):$/;"	m	class:LinearGaussianPolicy
+__init__	algorithm/policy/policy_prior.py	/^    def __init__(self, hyperparams):$/;"	m	class:PolicyPrior
+__init__	algorithm/policy/policy_prior_gmm.py	/^    def __init__(self, hyperparams):$/;"	m	class:PolicyPriorGMM
+__init__	algorithm/policy/tf_policy.py	/^    def __init__(self, dU, obs_tensor, act_op, feat_op, var, sess, device_string, copy_param_scope=None):$/;"	m	class:TfPolicy
+__init__	algorithm/policy_opt/policy_opt.py	/^    def __init__(self, hyperparams, dO, dU):$/;"	m	class:PolicyOpt
+__init__	algorithm/policy_opt/policy_opt_caffe.py	/^    def __init__(self, hyperparams, dO, dU):$/;"	m	class:PolicyOptCaffe
+__init__	algorithm/policy_opt/policy_opt_tf.py	/^    def __init__(self, hyperparams, dO, dU):$/;"	m	class:PolicyOptTf
+__init__	algorithm/policy_opt/tf_utils.py	/^    def __init__(self, input_tensor, target_output_tensor,$/;"	m	class:TfMap
+__init__	algorithm/policy_opt/tf_utils.py	/^    def __init__(self, loss_scalar, solver_name='adam', base_lr=None, lr_policy=None,$/;"	m	class:TfSolver
+__init__	algorithm/traj_opt/traj_opt.py	/^    def __init__(self, hyperparams):$/;"	m	class:TrajOpt
+__init__	algorithm/traj_opt/traj_opt_lqr.py	/^    def __init__(self, hyperparams, dynamics):$/;"	m	class:TrajOptLQR
+__init__	algorithm/traj_opt/traj_opt_lqr_python.py	/^    def __init__(self, hyperparams):$/;"	m	class:TrajOptLQRPython
+__init__	algorithm/traj_opt/traj_opt_pi2.py	/^    def __init__(self, hyperparams):$/;"	m	class:TrajOptPI2
+__init__	algorithm/traj_opt/traj_opt_pilqr.py	/^    def __init__(self, hyperparams):$/;"	m	class:TrajOptPILQR
+__init__	gps_main.py	/^    def __init__(self, config, quit_on_end=False):$/;"	m	class:GPSMain
+__init__	gui/action_panel.py	/^    def __init__(self, fig, gs, rows, cols, actions_arr):$/;"	m	class:ActionPanel
+__init__	gui/action_panel.py	/^    def __init__(self, key, name, func, axis_pos=None, keyboard_binding=None, ps3_binding=None):$/;"	m	class:Action
+__init__	gui/gps_training_gui.py	/^    def __init__(self, hyperparams):$/;"	m	class:GPSTrainingGUI
+__init__	gui/image_visualizer.py	/^    def __init__(self, fig, gs, cropsize=None, rostopic=None, show_overlay_buttons=False):$/;"	m	class:ImageVisualizer
+__init__	gui/mean_plotter.py	/^    def __init__(self, fig, gs, label='mean', color='black', alpha=1.0, min_itr=10):$/;"	m	class:MeanPlotter
+__init__	gui/plotter_3d.py	/^    def __init__(self, fig, gs, num_plots, rows=None, cols=None):$/;"	m	class:Plotter3D
+__init__	gui/realtime_plotter.py	/^    def __init__(self, fig, gs, time_window=500, labels=None, alphas=None):$/;"	m	class:RealtimePlotter
+__init__	gui/target_setup_gui.py	/^    def __init__(self, hyperparams, agent):$/;"	m	class:TargetSetupGUI
+__init__	gui/textbox.py	/^    def __init__(self, fig, gs, log_filename=None, max_display_size=10,$/;"	m	class:Textbox
+__init__	sample/sample.py	/^    def __init__(self, agent):$/;"	m	class:Sample
+__init__	sample/sample_list.py	/^    def __init__(self):$/;"	m	class:SysOutWriter
+__init__	sample/sample_list.py	/^    def __init__(self, data_file):$/;"	m	class:PickleSampleWriter
+__init__	sample/sample_list.py	/^    def __init__(self, samples):$/;"	m	class:SampleList
+__init__	utility/data_logger.py	/^    def __init__(self):$/;"	m	class:DataLogger
+__init__	utility/general_utils.py	/^    def __init__(self, variables):$/;"	m	class:BundleType
+__init__	utility/gmm.py	/^    def __init__(self, init_sequential=False, eigreg=False, warmstart=True):$/;"	m	class:GMM
+__len__	sample/sample_list.py	/^    def __len__(self):$/;"	m	class:SampleList	file:
+__metaclass__	agent/agent.py	/^    __metaclass__ = abc.ABCMeta$/;"	v	class:Agent
+__metaclass__	algorithm/algorithm.py	/^    __metaclass__ = abc.ABCMeta$/;"	v	class:Algorithm
+__metaclass__	algorithm/cost/cost.py	/^    __metaclass__ = abc.ABCMeta$/;"	v	class:Cost
+__metaclass__	algorithm/dynamics/dynamics.py	/^    __metaclass__ = abc.ABCMeta$/;"	v	class:Dynamics
+__metaclass__	algorithm/policy/policy.py	/^    __metaclass__ = abc.ABCMeta$/;"	v	class:Policy
+__metaclass__	algorithm/policy_opt/policy_opt.py	/^    __metaclass__ = abc.ABCMeta$/;"	v	class:PolicyOpt
+__metaclass__	algorithm/traj_opt/traj_opt.py	/^    __metaclass__ = abc.ABCMeta$/;"	v	class:TrajOpt
+__module__	proto/gps_pb2.py	/^  __module__ = 'gps_pb2'$/;"	v
+__reset	agent/box2d/framework.py	/^    def __reset(self):$/;"	m	class:FrameworkBase	file:
+__reset	agent/box2d/pygame_framework.py	/^    def __reset(self):$/;"	m	class:PygameFramework	file:
+__setattr__	utility/general_utils.py	/^    def __setattr__(self, key, value):$/;"	m	class:BundleType	file:
+__setstate__	algorithm/algorithm.py	/^    def __setstate__(self, state):$/;"	m	class:Algorithm	file:
+__setstate__	algorithm/policy_opt/policy_opt_caffe.py	/^    def __setstate__(self, state):$/;"	m	class:PolicyOptCaffe	file:
+__setstate__	algorithm/policy_opt/policy_opt_tf.py	/^    def __setstate__(self, state):$/;"	m	class:PolicyOptTf	file:
+__setstate__	sample/sample.py	/^    def __setstate__(self, state):$/;"	m	class:Sample	file:
+_advance_iteration_variables	algorithm/algorithm.py	/^    def _advance_iteration_variables(self):$/;"	m	class:Algorithm
+_advance_iteration_variables	algorithm/algorithm_badmm.py	/^    def _advance_iteration_variables(self):$/;"	m	class:AlgorithmBADMM
+_advance_iteration_variables	algorithm/algorithm_mdgps.py	/^    def _advance_iteration_variables(self):$/;"	m	class:AlgorithmMDGPS
+_b	proto/gps_pb2.py	/^_b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))$/;"	v
+_calculate_3d_axis_limits	gui/gps_training_gui.py	/^    def _calculate_3d_axis_limits(self, traj_sample_lists, pol_sample_lists):$/;"	m	class:GPSTrainingGUI
+_callback	agent/ros/ros_utils.py	/^    def _callback(self, message):$/;"	m	class:ServiceEmulator
+_compute_step_pi2_lqr	algorithm/algorithm_traj_opt_pilqr.py	/^    def _compute_step_pi2_lqr(self, m, pdpc, pdcc, cdcc, pmc, cmc, cur_res):$/;"	m	class:AlgorithmTrajOptPILQR
+_conv_check	algorithm/traj_opt/traj_opt_lqr_python.py	/^    def _conv_check(self, con, kl_step):$/;"	m	class:TrajOptLQRPython
+_end	gps_main.py	/^    def _end(self):$/;"	m	class:GPSMain
+_estimate_cost	algorithm/algorithm_badmm.py	/^    def _estimate_cost(self, traj_distr, traj_info, pol_info, m):$/;"	m	class:AlgorithmBADMM
+_eval_cost	algorithm/algorithm.py	/^    def _eval_cost(self, cond):$/;"	m	class:Algorithm
+_evalloss	algorithm/cost/cost_lin_wp.py	/^    def _evalloss(self, dist):$/;"	m	class:CostLinWP
+_get_image_from_obs	agent/mjc/agent_mjc.py	/^    def _get_image_from_obs(self, obs):$/;"	m	class:AgentMuJoCo
+_get_new_action	agent/ros/agent_ros.py	/^    def _get_new_action(self, policy, obs):$/;"	m	class:AgentROS
+_get_next_seq_id	agent/ros/agent_ros.py	/^    def _get_next_seq_id(self):$/;"	m	class:AgentROS
+_init	agent/mjc/agent_mjc.py	/^    def _init(self, condition):$/;"	m	class:AgentMuJoCo
+_init_pubs_and_subs	agent/ros/agent_ros.py	/^    def _init_pubs_and_subs(self):$/;"	m	class:AgentROS
+_init_sample	agent/box2d/agent_box2d.py	/^    def _init_sample(self, b2d_X):$/;"	m	class:AgentBox2D
+_init_sample	agent/mjc/agent_mjc.py	/^    def _init_sample(self, condition, feature_fn=None):$/;"	m	class:AgentMuJoCo
+_init_tf	agent/ros/agent_ros.py	/^    def _init_tf(self, dU):$/;"	m	class:AgentROS
+_initialize	gps_main.py	/^    def _initialize(self, itr_load):$/;"	m	class:GPSMain
+_initialize_buttons	gui/action_panel.py	/^    def _initialize_buttons(self):$/;"	m	class:ActionPanel
+_log_data	gps_main.py	/^    def _log_data(self, itr, traj_sample_lists, pol_sample_lists=None):$/;"	m	class:GPSMain
+_measure_ent	algorithm/algorithm.py	/^    def _measure_ent(self, m):$/;"	m	class:Algorithm
+_output_column_titles	gui/gps_training_gui.py	/^    def _output_column_titles(self, algorithm, policy_titles=False):$/;"	m	class:GPSTrainingGUI
+_policy_dual_step	algorithm/algorithm_badmm.py	/^    def _policy_dual_step(self, m, step=False):$/;"	m	class:AlgorithmBADMM
+_policy_kl	algorithm/algorithm_badmm.py	/^    def _policy_kl(self, m, prev=False):$/;"	m	class:AlgorithmBADMM
+_set_interp_values	algorithm/algorithm_badmm.py	/^    def _set_interp_values(self):$/;"	m	class:AlgorithmBADMM
+_set_new_mult	algorithm/algorithm.py	/^    def _set_new_mult(self, predicted_impr, actual_impr, m):$/;"	m	class:Algorithm
+_set_sample	agent/box2d/agent_box2d.py	/^    def _set_sample(self, sample, b2d_X, t):$/;"	m	class:AgentBox2D
+_set_sample	agent/mjc/agent_mjc.py	/^    def _set_sample(self, sample, mj_X, t, condition, feature_fn=None):$/;"	m	class:AgentMuJoCo
+_setup_conditions	agent/box2d/agent_box2d.py	/^    def _setup_conditions(self):$/;"	m	class:AgentBox2D
+_setup_conditions	agent/mjc/agent_mjc.py	/^    def _setup_conditions(self):$/;"	m	class:AgentMuJoCo
+_setup_world	agent/box2d/agent_box2d.py	/^    def _setup_world(self, world, target, render):$/;"	m	class:AgentBox2D
+_setup_world	agent/mjc/agent_mjc.py	/^    def _setup_world(self, filename):$/;"	m	class:AgentMuJoCo
+_stepadjust	algorithm/algorithm_badmm.py	/^    def _stepadjust(self, m):$/;"	m	class:AlgorithmBADMM
+_stepadjust	algorithm/algorithm_mdgps.py	/^    def _stepadjust(self):$/;"	m	class:AlgorithmMDGPS
+_stepadjust	algorithm/algorithm_traj_opt.py	/^    def _stepadjust(self, m):$/;"	m	class:AlgorithmTrajOpt
+_stepadjust	algorithm/algorithm_traj_opt_pilqr.py	/^    def _stepadjust(self, m):$/;"	m	class:AlgorithmTrajOptPILQR
+_sym_db	proto/gps_pb2.py	/^_sym_db = _symbol_database.Default()$/;"	v
+_take_iteration	gps_main.py	/^    def _take_iteration(self, itr, sample_lists):$/;"	m	class:GPSMain
+_take_policy_samples	gps_main.py	/^    def _take_policy_samples(self, N=None):$/;"	m	class:GPSMain
+_take_sample	gps_main.py	/^    def _take_sample(self, itr, cond, i):$/;"	m	class:GPSMain
+_tf_callback	agent/ros/agent_ros.py	/^    def _tf_callback(self, message):$/;"	m	class:AgentROS
+_tf_publish	agent/ros/agent_ros.py	/^    def _tf_publish(self, pub_msg):$/;"	m	class:AgentROS
+_update_dynamics	algorithm/algorithm.py	/^    def _update_dynamics(self):$/;"	m	class:Algorithm
+_update_iteration_data	gui/gps_training_gui.py	/^    def _update_iteration_data(self, itr, algorithm, costs, pol_sample_lists):$/;"	m	class:GPSTrainingGUI
+_update_linear_gaussian_controller_plots	gui/gps_training_gui.py	/^    def _update_linear_gaussian_controller_plots(self, algorithm, agent, m):$/;"	m	class:GPSTrainingGUI
+_update_policy	algorithm/algorithm_badmm.py	/^    def _update_policy(self, inner_itr):$/;"	m	class:AlgorithmBADMM
+_update_policy	algorithm/algorithm_mdgps.py	/^    def _update_policy(self):$/;"	m	class:AlgorithmMDGPS
+_update_policy_fit	algorithm/algorithm_badmm.py	/^    def _update_policy_fit(self, m, init=False):$/;"	m	class:AlgorithmBADMM
+_update_policy_fit	algorithm/algorithm_mdgps.py	/^    def _update_policy_fit(self, m):$/;"	m	class:AlgorithmMDGPS
+_update_samples_plots	gui/gps_training_gui.py	/^    def _update_samples_plots(self, sample_lists, m, color, label):$/;"	m	class:GPSTrainingGUI
+_update_step_size	algorithm/algorithm_badmm.py	/^    def _update_step_size(self):$/;"	m	class:AlgorithmBADMM
+_update_step_size	algorithm/algorithm_traj_opt.py	/^    def _update_step_size(self):$/;"	m	class:AlgorithmTrajOpt
+_update_step_size	algorithm/algorithm_traj_opt_pilqr.py	/^    def _update_step_size(self):$/;"	m	class:AlgorithmTrajOptPILQR
+_update_trajectories	algorithm/algorithm.py	/^    def _update_trajectories(self):$/;"	m	class:Algorithm
+_update_trajectory_visualizations	gui/gps_training_gui.py	/^    def _update_trajectory_visualizations(self, algorithm, agent,$/;"	m	class:GPSTrainingGUI
+act	algorithm/policy/caffe_policy.py	/^    def act(self, x, obs, t, noise):$/;"	m	class:CaffePolicy
+act	algorithm/policy/lin_gauss_policy.py	/^    def act(self, x, obs, t, noise=None):$/;"	m	class:LinearGaussianPolicy
+act	algorithm/policy/policy.py	/^    def act(self, x, obs, t, noise):$/;"	m	class:Policy
+act	algorithm/policy/tf_policy.py	/^    def act(self, x, obs, t, noise):$/;"	m	class:TfPolicy
+add_legend	gui/plotter_3d.py	/^    def add_legend(self, linestyle, marker, color, label):$/;"	m	class:Plotter3D
+append_output_text	gui/gps_training_gui.py	/^    def append_output_text(self, text):$/;"	m	class:GPSTrainingGUI
+append_text	gui/textbox.py	/^    def append_text(self, text):$/;"	m	class:Textbox
+approx_equal	utility/general_utils.py	/^def approx_equal(a, b, threshold=1e-5):$/;"	f
+approximated_cost	algorithm/traj_opt/traj_opt_utils.py	/^def approximated_cost(sample_list, traj_distr, traj_info):$/;"	f
+axisScale	agent/box2d/pygame_framework.py	/^    axisScale = 10.0$/;"	v	class:PygameDraw
+backend	agent/box2d/settings.py	/^    backend = 'pygame'$/;"	v	class:fwSettings
+backward	algorithm/policy_opt/policy_layers.py	/^    def backward(self, top, propagate_down, bottom):$/;"	m	class:PolicyDataLayer
+backward	algorithm/policy_opt/policy_layers.py	/^    def backward(self, top, propagate_down, bottom):$/;"	m	class:WeightedEuclideanLoss
+backward	algorithm/traj_opt/traj_opt_lqr_python.py	/^    def backward(self, prev_traj_distr, traj_info, eta, algorithm, m):$/;"	m	class:TrajOptLQRPython
+batched_matrix_vector_multiply	algorithm/policy_opt/tf_model_example.py	/^def batched_matrix_vector_multiply(vector, matrix):$/;"	f
+buffered_axis_limits	gui/util.py	/^def buffered_axis_limits(amin, amax, buffer_factor=1.0):$/;"	f
+check_list_and_convert	algorithm/policy_opt/tf_utils.py	/^def check_list_and_convert(the_object):$/;"	f
+check_shape	utility/general_utils.py	/^def check_shape(value, expected_shape, name=''):$/;"	f
+checkboxes	agent/box2d/settings.py	/^checkboxes = (("Warm Starting", "enableWarmStarting"),$/;"	v
+clear	gui/plotter_3d.py	/^    def clear(self, i):$/;"	m	class:Plotter3D
+clear_all	gui/plotter_3d.py	/^    def clear_all(self):$/;"	m	class:Plotter3D
+clear_samples	agent/agent.py	/^    def clear_samples(self, condition=None):$/;"	m	class:Agent
+clusterwts	utility/gmm.py	/^    def clusterwts(self, data):$/;"	m	class:GMM
+colors	agent/box2d/framework.py	/^    colors = {$/;"	v	class:FrameworkBase
+compute_costs	algorithm/algorithm_badmm.py	/^    def compute_costs(self, m, eta, augment=True):$/;"	m	class:AlgorithmBADMM
+compute_costs	algorithm/algorithm_mdgps.py	/^    def compute_costs(self, m, eta, augment=True):$/;"	m	class:AlgorithmMDGPS
+compute_costs	algorithm/algorithm_mdgps_pilqr.py	/^    def compute_costs(self, m, eta, augment=True):$/;"	m	class:AlgorithmMDGPSPILQR
+compute_costs	algorithm/algorithm_traj_opt.py	/^    def compute_costs(self, m, eta, augment=True):$/;"	m	class:AlgorithmTrajOpt
+compute_costs	algorithm/algorithm_traj_opt_pilqr.py	/^    def compute_costs(self, m, eta, augment=True):$/;"	m	class:AlgorithmTrajOptPILQR
+config	gui/config.py	/^config = {$/;"	v
+construct_fc_network	algorithm/policy_opt/config.py	/^    construct_fc_network = None$/;"	v
+construct_fc_network	algorithm/policy_opt/policy_opt_utils.py	/^def construct_fc_network(n_layers=3, dim_hidden=None, dim_input=27,$/;"	f
+containing_type	proto/gps_pb2.py	/^  containing_type=None,$/;"	v
+conv2d	algorithm/policy_opt/tf_model_example.py	/^def conv2d(img, w, b, strides=[1, 1, 1, 1]):$/;"	f
+copy	algorithm/dynamics/dynamics.py	/^    def copy(self):$/;"	m	class:Dynamics
+delete_last_sample	agent/agent.py	/^    def delete_last_sample(self, condition):$/;"	m	class:Agent
+description	agent/box2d/framework.py	/^    description = None$/;"	v	class:FrameworkBase
+display_calculating	gui/gps_training_gui.py	/^        def display_calculating(delay, run_event):$/;"	f	function:GPSTrainingGUI.__init__
+draw	gui/image_visualizer.py	/^    def draw(self):$/;"	m	class:ImageVisualizer
+draw	gui/mean_plotter.py	/^    def draw(self):$/;"	m	class:MeanPlotter
+draw	gui/plotter_3d.py	/^    def draw(self):$/;"	m	class:Plotter3D
+draw	gui/realtime_plotter.py	/^    def draw(self):$/;"	m	class:RealtimePlotter
+draw	gui/textbox.py	/^    def draw(self):$/;"	m	class:Textbox
+drawAABBs	agent/box2d/settings.py	/^    drawAABBs = False$/;"	v	class:fwSettings
+drawCOMs	agent/box2d/settings.py	/^    drawCOMs = False            # Centers of mass$/;"	v	class:fwSettings
+drawContactNormals	agent/box2d/settings.py	/^    drawContactNormals = False$/;"	v	class:fwSettings
+drawContactPoints	agent/box2d/settings.py	/^    drawContactPoints = False$/;"	v	class:fwSettings
+drawCoreShapes	agent/box2d/settings.py	/^    drawCoreShapes = False$/;"	v	class:fwSettings
+drawFPS	agent/box2d/settings.py	/^    drawFPS = True$/;"	v	class:fwSettings
+drawJoints	agent/box2d/settings.py	/^    drawJoints = True$/;"	v	class:fwSettings
+drawMenu	agent/box2d/settings.py	/^    drawMenu = True             # toggle by pressing F1$/;"	v	class:fwSettings
+drawOBBs	agent/box2d/settings.py	/^    drawOBBs = False$/;"	v	class:fwSettings
+drawPairs	agent/box2d/settings.py	/^    drawPairs = False$/;"	v	class:fwSettings
+drawShapes	agent/box2d/settings.py	/^    drawShapes = True$/;"	v	class:fwSettings
+drawStats	agent/box2d/settings.py	/^    drawStats = True$/;"	v	class:fwSettings
+draw_ticklabels	gui/mean_plotter.py	/^    def draw_ticklabels(self):$/;"	m	class:MeanPlotter
+enableContinuous	agent/box2d/settings.py	/^    enableContinuous = True$/;"	v	class:fwSettings
+enableSubStepping	agent/box2d/settings.py	/^    enableSubStepping = False$/;"	v	class:fwSettings
+enableWarmStarting	agent/box2d/settings.py	/^    enableWarmStarting = True$/;"	v	class:fwSettings
+end_mode	gui/gps_training_gui.py	/^    def end_mode(self):$/;"	m	class:GPSTrainingGUI
+enum_types	proto/gps_pb2.py	/^  enum_types=[$/;"	v
+estep	utility/gmm.py	/^    def estep(self, data):$/;"	m	class:GMM
+estimate_cost	algorithm/traj_opt/traj_opt_lqr_python.py	/^    def estimate_cost(self, traj_distr, traj_info):$/;"	m	class:TrajOptLQRPython
+estimate_moments	algorithm/algorithm_utils.py	/^def estimate_moments(X, mu, covar):$/;"	f
+estop	gui/gps_training_gui.py	/^    def estop(self, event=None):$/;"	m	class:GPSTrainingGUI
+euclidean_loss_layer	algorithm/policy_opt/tf_model_example.py	/^def euclidean_loss_layer(a, b, precision, batch_size):$/;"	f
+eval	algorithm/cost/cost.py	/^    def eval(self, sample):$/;"	m	class:Cost
+eval	algorithm/cost/cost_action.py	/^    def eval(self, sample):$/;"	m	class:CostAction
+eval	algorithm/cost/cost_binary_region.py	/^    def eval(self, sample):$/;"	m	class:CostBinaryRegion
+eval	algorithm/cost/cost_fk.py	/^    def eval(self, sample):$/;"	m	class:CostFK
+eval	algorithm/cost/cost_fk_blocktouch.py	/^    def eval(self, sample):$/;"	m	class:CostFKBlock
+eval	algorithm/cost/cost_lin_wp.py	/^    def eval(self, sample):$/;"	m	class:CostLinWP
+eval	algorithm/cost/cost_state.py	/^    def eval(self, sample):$/;"	m	class:CostState
+eval	algorithm/cost/cost_sum.py	/^    def eval(self, sample):$/;"	m	class:CostSum
+eval	algorithm/dynamics/dynamics_prior_gmm.py	/^    def eval(self, Dx, Du, pts):$/;"	m	class:DynamicsPriorGMM
+eval	algorithm/policy/policy_prior.py	/^    def eval(self, Ts, Ps):$/;"	m	class:PolicyPrior
+eval	algorithm/policy/policy_prior_gmm.py	/^    def eval(self, Ts, Ps):$/;"	m	class:PolicyPriorGMM
+evall1l2term	algorithm/cost/cost_utils.py	/^def evall1l2term(wp, d, Jd, Jdd, l1, l2, alpha):$/;"	f
+evallogl2term	algorithm/cost/cost_utils.py	/^def evallogl2term(wp, d, Jd, Jdd, l1, l2, alpha):$/;"	f
+extension_ranges	proto/gps_pb2.py	/^  extension_ranges=[],$/;"	v
+extensions	proto/gps_pb2.py	/^  extensions=[$/;"	v
+extract_condition	utility/general_utils.py	/^def extract_condition(hyperparams, m):$/;"	f
+fields	proto/gps_pb2.py	/^  fields=[$/;"	v
+file	proto/gps_pb2.py	/^  file=DESCRIPTOR,$/;"	v
+filename	proto/gps_pb2.py	/^  filename=None,$/;"	v
+finite_differences	utility/general_utils.py	/^def finite_differences(func, inputs, func_output_shape=(), epsilon=1e-5):$/;"	f
+fit	algorithm/dynamics/dynamics.py	/^    def fit(self, sample_list):$/;"	m	class:Dynamics
+fit	algorithm/dynamics/dynamics_lr.py	/^    def fit(self, X, U):$/;"	m	class:DynamicsLR
+fit	algorithm/dynamics/dynamics_lr_prior.py	/^    def fit(self, X, U):$/;"	m	class:DynamicsLRPrior
+fit	algorithm/policy/policy_prior.py	/^    def fit(self, X, pol_mu, pol_sig):$/;"	m	class:PolicyPrior
+fit	algorithm/policy/policy_prior_gmm.py	/^    def fit(self, X, pol_mu, pol_sig):$/;"	m	class:PolicyPriorGMM
+fold_k	algorithm/policy/lin_gauss_policy.py	/^    def fold_k(self, noise):$/;"	m	class:LinearGaussianPolicy
+forward	algorithm/policy_opt/policy_layers.py	/^    def forward(self, bottom, top):$/;"	m	class:PolicyDataLayer
+forward	algorithm/policy_opt/policy_layers.py	/^    def forward(self, bottom, top):$/;"	m	class:WeightedEuclideanLoss
+forward	algorithm/traj_opt/traj_opt_lqr_python.py	/^    def forward(self, traj_distr, traj_info):$/;"	m	class:TrajOptLQRPython
+framework_module	agent/box2d/framework.py	/^framework_module = __import__('gps.agent.box2d.'+'%s_framework' %$/;"	v
+full_name	proto/gps_pb2.py	/^  full_name='gps.ActuatorType',$/;"	v
+full_name	proto/gps_pb2.py	/^  full_name='gps.ControllerType',$/;"	v
+full_name	proto/gps_pb2.py	/^  full_name='gps.PositionControlMode',$/;"	v
+full_name	proto/gps_pb2.py	/^  full_name='gps.Sample',$/;"	v
+full_name	proto/gps_pb2.py	/^  full_name='gps.SampleType',$/;"	v
+fwQueryCallback	agent/box2d/framework.py	/^class fwQueryCallback(b2.b2QueryCallback):$/;"	c
+fwSettings	agent/box2d/settings.py	/^class fwSettings(object):$/;"	c
+gauss_fit_joint_prior	algorithm/algorithm_utils.py	/^def gauss_fit_joint_prior(pts, mu0, Phi, m, n0, dwts, dX, dU, sig_reg):$/;"	f
+generate_experiment_info	gui/config.py	/^def generate_experiment_info(config):$/;"	f
+generate_noise	agent/agent_utils.py	/^def generate_noise(T, dU, hyperparams):$/;"	f
+get	sample/sample.py	/^    def get(self, sensor_name, t=None):$/;"	m	class:Sample
+get_U	sample/sample.py	/^    def get_U(self, t=None):$/;"	m	class:Sample
+get_U	sample/sample_list.py	/^    def get_U(self, idx=None):$/;"	m	class:SampleList
+get_X	sample/sample.py	/^    def get_X(self, t=None):$/;"	m	class:Sample
+get_X	sample/sample_list.py	/^    def get_X(self, idx=None):$/;"	m	class:SampleList
+get_copy_params	algorithm/policy/tf_policy.py	/^    def get_copy_params(self):$/;"	m	class:TfPolicy
+get_current_image	gui/image_visualizer.py	/^    def get_current_image(self):$/;"	m	class:ImageVisualizer
+get_data	agent/ros/agent_ros.py	/^    def get_data(self, arm=TRIAL_ARM):$/;"	m	class:AgentROS
+get_ee_points	utility/general_utils.py	/^def get_ee_points(offsets, ee_pos, ee_rot):$/;"	f
+get_feature_op	algorithm/policy_opt/tf_utils.py	/^    def get_feature_op(self):$/;"	m	class:TfMap
+get_features	algorithm/policy/tf_policy.py	/^    def get_features(self, obs):$/;"	m	class:TfPolicy
+get_idx_obs	agent/agent.py	/^    def get_idx_obs(self, sensor_name):$/;"	m	class:Agent
+get_idx_x	agent/agent.py	/^    def get_idx_x(self, sensor_name):$/;"	m	class:Agent
+get_input_layer	algorithm/policy_opt/tf_model_example.py	/^def get_input_layer(dim_input, dim_output):$/;"	f
+get_input_tensor	algorithm/policy_opt/tf_utils.py	/^    def get_input_tensor(self):$/;"	m	class:TfMap
+get_last_conv_values	algorithm/policy_opt/tf_utils.py	/^    def get_last_conv_values(self, sess, feed_dict, num_values, batch_size):$/;"	m	class:TfSolver
+get_loss_layer	algorithm/policy_opt/tf_model_example.py	/^def get_loss_layer(mlp_out, action, precision, batch_size):$/;"	f
+get_loss_op	algorithm/policy_opt/tf_utils.py	/^    def get_loss_op(self):$/;"	m	class:TfMap
+get_meta	sample/sample.py	/^    def get_meta(self):$/;"	m	class:Sample
+get_mlp_layers	algorithm/policy_opt/tf_model_example.py	/^def get_mlp_layers(mlp_input, number_layers, dimension_hidden):$/;"	f
+get_net_param	algorithm/policy/caffe_policy.py	/^    def get_net_param(self):$/;"	m	class:CaffePolicy
+get_noise	sample/sample_list.py	/^    def get_noise(self, idx=None):$/;"	m	class:SampleList
+get_obs	sample/sample.py	/^    def get_obs(self, t=None):$/;"	m	class:Sample
+get_obs	sample/sample_list.py	/^    def get_obs(self, idx=None):$/;"	m	class:SampleList
+get_output_op	algorithm/policy_opt/tf_utils.py	/^    def get_output_op(self):$/;"	m	class:TfMap
+get_precision_tensor	algorithm/policy_opt/tf_utils.py	/^    def get_precision_tensor(self):$/;"	m	class:TfMap
+get_prior	algorithm/dynamics/dynamics.py	/^    def get_prior(self):$/;"	m	class:Dynamics
+get_prior	algorithm/dynamics/dynamics_lr.py	/^    def get_prior(self):$/;"	m	class:DynamicsLR
+get_prior	algorithm/dynamics/dynamics_lr_prior.py	/^    def get_prior(self):$/;"	m	class:DynamicsLRPrior
+get_ramp_multiplier	algorithm/cost/cost_utils.py	/^def get_ramp_multiplier(ramp_option, T, wp_final_multiplier=1.0):$/;"	f
+get_samples	agent/agent.py	/^    def get_samples(self, condition, start=0, end=None):$/;"	m	class:Agent
+get_samples	sample/sample_list.py	/^    def get_samples(self, idx=None):$/;"	m	class:SampleList
+get_solver_op	algorithm/policy_opt/tf_utils.py	/^    def get_solver_op(self, var_list=None, loss=None):$/;"	m	class:TfSolver
+get_state	agent/box2d/arm_world.py	/^    def get_state(self):$/;"	m	class:ArmWorld
+get_state	agent/box2d/point_mass_world.py	/^    def get_state(self):$/;"	m	class:PointMassWorld
+get_target_output_tensor	algorithm/policy_opt/tf_utils.py	/^    def get_target_output_tensor(self):$/;"	m	class:TfMap
+get_var_values	algorithm/policy_opt/tf_utils.py	/^    def get_var_values(self, sess, var, feed_dict, num_values, batch_size):$/;"	m	class:TfSolver
+get_weights_string	algorithm/policy/caffe_policy.py	/^    def get_weights_string(self):$/;"	m	class:CaffePolicy
+get_xavier_weights	algorithm/policy_opt/tf_model_example.py	/^def get_xavier_weights(filter_shape, poolsize=(2, 2)):$/;"	f
+guess_dynamics	algorithm/dynamics/dynamics_utils.py	/^def guess_dynamics(gains, acc, dX, dU, dt):$/;"	f
+hz	agent/box2d/settings.py	/^    hz = 20.0$/;"	v	class:fwSettings
+inference	utility/gmm.py	/^    def inference(self, pts):$/;"	m	class:GMM
+init	gui/mean_plotter.py	/^    def init(self, data_len):$/;"	m	class:MeanPlotter
+init	gui/realtime_plotter.py	/^    def init(self, data_len):$/;"	m	class:RealtimePlotter
+init_bias	algorithm/policy_opt/tf_model_example.py	/^def init_bias(shape, name=None):$/;"	f
+init_from_lists	algorithm/policy_opt/tf_utils.py	/^    def init_from_lists(cls, inputs, outputs, loss, fp=None):$/;"	m	class:TfMap
+init_lqr	algorithm/policy/lin_gauss_init.py	/^def init_lqr(hyperparams):$/;"	f
+init_network	algorithm/policy_opt/policy_opt_tf.py	/^    def init_network(self):$/;"	m	class:PolicyOptTf
+init_pd	algorithm/policy/lin_gauss_init.py	/^def init_pd(hyperparams):$/;"	f
+init_solver	algorithm/policy_opt/policy_opt_caffe.py	/^    def init_solver(self):$/;"	m	class:PolicyOptCaffe
+init_solver	algorithm/policy_opt/policy_opt_tf.py	/^    def init_solver(self):$/;"	m	class:PolicyOptTf
+init_weights	algorithm/policy_opt/tf_model_example.py	/^def init_weights(shape, name=None):$/;"	f
+initial_state	algorithm/dynamics/dynamics_prior_gmm.py	/^    def initial_state(self):$/;"	m	class:DynamicsPriorGMM
+inverted_keyboard_bindings	gui/config.py	/^inverted_keyboard_bindings = {value: key$/;"	v
+inverted_ps3_bindings	gui/config.py	/^inverted_ps3_bindings = {value: key for key, value in ps3_bindings.iteritems()}$/;"	v
+is_extendable	proto/gps_pb2.py	/^  is_extendable=False,$/;"	v
+iteration	algorithm/algorithm.py	/^    def iteration(self, sample_list):$/;"	m	class:Algorithm
+iteration	algorithm/algorithm_badmm.py	/^    def iteration(self, sample_lists):$/;"	m	class:AlgorithmBADMM
+iteration	algorithm/algorithm_mdgps.py	/^    def iteration(self, sample_lists):$/;"	m	class:AlgorithmMDGPS
+iteration	algorithm/algorithm_mdgps_pilqr.py	/^    def iteration(self, sample_lists):$/;"	m	class:AlgorithmMDGPSPILQR
+iteration	algorithm/algorithm_pigps.py	/^    def iteration(self, sample_lists):$/;"	m	class:AlgorithmPIGPS
+iteration	algorithm/algorithm_traj_opt.py	/^    def iteration(self, sample_lists):$/;"	m	class:AlgorithmTrajOpt
+iteration	algorithm/algorithm_traj_opt_pi2.py	/^    def iteration(self, sample_lists):$/;"	m	class:AlgorithmTrajOptPI2
+iteration	algorithm/algorithm_traj_opt_pilqr.py	/^    def iteration(self, sample_lists):$/;"	m	class:AlgorithmTrajOptPILQR
+keyboard_bindings	gui/config.py	/^keyboard_bindings = {$/;"	v
+kl_dual	algorithm/traj_opt/traj_opt_pi2.py	/^    def kl_dual(self, eta, kl_threshold, costs):$/;"	m	class:TrajOptPI2
+list_options	agent/box2d/settings.py	/^list_options = [i for i in dir(fwSettings) if not i.startswith('_')]$/;"	v
+load_data_from_npz	gui/util.py	/^def load_data_from_npz(filename, actuator_name, target_number, data_time,$/;"	f
+load_from_npz	gui/util.py	/^def load_from_npz(filename, key, default=None):$/;"	f
+load_policy	algorithm/policy/tf_policy.py	/^    def load_policy(cls, policy_dict_path, tf_generator, network_config=None):$/;"	m	class:TfPolicy
+load_pose_from_npz	gui/util.py	/^def load_pose_from_npz(filename, actuator_name, target_number, data_time,$/;"	f
+log_text	gui/textbox.py	/^    def log_text(self, text):$/;"	m	class:Textbox
+logsum	utility/gmm.py	/^def logsum(vec, axis=0, keepdims=True):$/;"	f
+main	gps_main.py	/^def main():$/;"	f
+mannequin_mode	gui/target_setup_gui.py	/^    def mannequin_mode(self, event=None):$/;"	m	class:TargetSetupGUI
+maxContactPoints	agent/box2d/settings.py	/^    maxContactPoints = 100$/;"	v	class:fwSettings
+max_pool	algorithm/policy_opt/tf_model_example.py	/^def max_pool(img, k):$/;"	f
+moments	utility/gmm.py	/^    def moments(self, logwts):$/;"	m	class:GMM
+move_to_initial	gui/target_setup_gui.py	/^    def move_to_initial(self, event=None):$/;"	m	class:TargetSetupGUI
+move_to_target	gui/target_setup_gui.py	/^    def move_to_target(self, event=None):$/;"	m	class:TargetSetupGUI
+msg_to_sample	agent/ros/ros_utils.py	/^def msg_to_sample(ros_msg, agent):$/;"	f
+multi_modal_network	algorithm/policy_opt/tf_model_example.py	/^def multi_modal_network(dim_input=27, dim_output=7, batch_size=25, network_config=None):$/;"	f
+multi_modal_network_fp	algorithm/policy_opt/tf_model_example.py	/^def multi_modal_network_fp(dim_input=27, dim_output=7, batch_size=25, network_config=None):$/;"	f
+name	agent/box2d/arm_world.py	/^    name = "2 Link Arm"$/;"	v	class:ArmWorld
+name	agent/box2d/framework.py	/^    name = "None"$/;"	v	class:FrameworkBase
+name	agent/box2d/point_mass_world.py	/^    name = "PointMass"$/;"	v	class:PointMassWorld
+name	proto/gps_pb2.py	/^  name='ActuatorType',$/;"	v
+name	proto/gps_pb2.py	/^  name='ControllerType',$/;"	v
+name	proto/gps_pb2.py	/^  name='PositionControlMode',$/;"	v
+name	proto/gps_pb2.py	/^  name='Sample',$/;"	v
+name	proto/gps_pb2.py	/^  name='SampleType',$/;"	v
+name	proto/gps_pb2.py	/^  name='gps.proto',$/;"	v
+nans_like	algorithm/policy/lin_gauss_policy.py	/^    def nans_like(self):$/;"	m	class:LinearGaussianPolicy
+nested_types	proto/gps_pb2.py	/^  nested_types=[],$/;"	v
+next_actuator_type	gui/target_setup_gui.py	/^    def next_actuator_type(self, event=None):$/;"	m	class:TargetSetupGUI
+next_target_number	gui/target_setup_gui.py	/^    def next_target_number(self, event=None):$/;"	m	class:TargetSetupGUI
+num_samples	sample/sample_list.py	/^    def num_samples(self):$/;"	m	class:SampleList
+on_key_press	gui/action_panel.py	/^    def on_key_press(self, event):$/;"	m	class:ActionPanel
+oneofs	proto/gps_pb2.py	/^  oneofs=[$/;"	v
+onlyInit	agent/box2d/settings.py	/^    onlyInit = False$/;"	v	class:fwSettings
+options	proto/gps_pb2.py	/^      options=None),$/;"	v
+options	proto/gps_pb2.py	/^      options=None,$/;"	v
+options	proto/gps_pb2.py	/^      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\\020\\001'))),$/;"	v
+options	proto/gps_pb2.py	/^  options=None,$/;"	v
+pack_data_meta	agent/agent.py	/^    def pack_data_meta(self, existing_mat, data_to_insert, data_types,$/;"	m	class:Agent
+pack_data_obs	agent/agent.py	/^    def pack_data_obs(self, existing_mat, data_to_insert, data_types,$/;"	m	class:Agent
+pack_data_x	agent/agent.py	/^    def pack_data_x(self, existing_mat, data_to_insert, data_types, axes=None):$/;"	m	class:Agent
+package	proto/gps_pb2.py	/^  package='gps',$/;"	v
+pause	agent/box2d/settings.py	/^    pause = False$/;"	v	class:fwSettings
+permuted_inverted_ps3_bindings	gui/config.py	/^permuted_inverted_ps3_bindings = {}$/;"	v
+pickle	utility/data_logger.py	/^    def pickle(self, filename, data):$/;"	m	class:DataLogger
+pickle_policy	algorithm/policy/tf_policy.py	/^    def pickle_policy(self, deg_obs, deg_action, checkpoint_path, goal_state=None, should_hash=False):$/;"	m	class:TfPolicy
+plot	gui/plotter_3d.py	/^    def plot(self, i, xs, ys, zs, linestyle='-', linewidth=1.0, marker=None,$/;"	m	class:Plotter3D
+plot_3d_gaussian	gui/plotter_3d.py	/^    def plot_3d_gaussian(self, i, mu, sigma, edges=100, linestyle='-.',$/;"	m	class:Plotter3D
+plot_3d_points	gui/plotter_3d.py	/^    def plot_3d_points(self, i, points, linestyle='-', linewidth=1.0,$/;"	m	class:Plotter3D
+pointSize	agent/box2d/settings.py	/^    pointSize = 2.5             # pixel radius for drawing points$/;"	v	class:fwSettings
+policy_to_msg	agent/ros/ros_utils.py	/^def policy_to_msg(policy, noise):$/;"	f
+positionIterations	agent/box2d/settings.py	/^    positionIterations = 3$/;"	v	class:fwSettings
+position_to_str	gui/target_setup_gui.py	/^    def position_to_str(self, position):$/;"	m	class:TargetSetupGUI
+prev_actuator_type	gui/target_setup_gui.py	/^    def prev_actuator_type(self, event=None):$/;"	m	class:TargetSetupGUI
+prev_target_number	gui/target_setup_gui.py	/^    def prev_target_number(self, event=None):$/;"	m	class:TargetSetupGUI
+prob	algorithm/policy_opt/policy_opt_caffe.py	/^    def prob(self, obs):$/;"	m	class:PolicyOptCaffe
+prob	algorithm/policy_opt/policy_opt_tf.py	/^    def prob(self, obs):$/;"	m	class:PolicyOptTf
+process_mode	gui/gps_training_gui.py	/^    def process_mode(self):$/;"	m	class:GPSTrainingGUI
+ps3_bindings	gui/config.py	/^ps3_bindings = {$/;"	v
+ps3_callback	gui/action_panel.py	/^    def ps3_callback(self, joy_msg):$/;"	m	class:ActionPanel
+publish	agent/ros/ros_utils.py	/^    def publish(self, pub_msg):$/;"	m	class:ServiceEmulator
+publish_and_wait	agent/ros/ros_utils.py	/^    def publish_and_wait(self, pub_msg, timeout=5.0, poll_delay=0.01,$/;"	m	class:ServiceEmulator
+relax_arm	agent/ros/agent_ros.py	/^    def relax_arm(self, arm):$/;"	m	class:AgentROS
+relax_controller	gui/target_setup_gui.py	/^    def relax_controller(self, event=None):$/;"	m	class:TargetSetupGUI
+reload_positions	gui/target_setup_gui.py	/^    def reload_positions(self):$/;"	m	class:TargetSetupGUI
+request_fail	gui/gps_training_gui.py	/^    def request_fail(self, event=None):$/;"	m	class:GPSTrainingGUI
+request_go	gui/gps_training_gui.py	/^    def request_go(self, event=None):$/;"	m	class:GPSTrainingGUI
+request_mode	gui/gps_training_gui.py	/^    def request_mode(self, request):$/;"	m	class:GPSTrainingGUI
+request_reset	gui/gps_training_gui.py	/^    def request_reset(self, event=None):$/;"	m	class:GPSTrainingGUI
+request_stop	gui/gps_training_gui.py	/^    def request_stop(self, event=None):$/;"	m	class:GPSTrainingGUI
+reset	agent/agent.py	/^    def reset(self, condition):$/;"	m	class:Agent
+reset	agent/ros/agent_ros.py	/^    def reset(self, condition):$/;"	m	class:AgentROS
+reset_arm	agent/ros/agent_ros.py	/^    def reset_arm(self, arm, mode, data):$/;"	m	class:AgentROS
+reset_world	agent/box2d/arm_world.py	/^    def reset_world(self):$/;"	m	class:ArmWorld
+reset_world	agent/box2d/point_mass_world.py	/^    def reset_world(self):$/;"	m	class:PointMassWorld
+reshape	algorithm/policy_opt/policy_layers.py	/^    def reshape(self, bottom, top):$/;"	m	class:PolicyDataLayer
+reshape	algorithm/policy_opt/policy_layers.py	/^    def reshape(self, bottom, top):$/;"	m	class:WeightedEuclideanLoss
+restore_model	algorithm/policy_opt/policy_opt_tf.py	/^    def restore_model(self, fname):$/;"	m	class:PolicyOptTf
+run	agent/box2d/arm_world.py	/^    def run(self):$/;"	m	class:ArmWorld
+run	agent/box2d/point_mass_world.py	/^    def run(self):$/;"	m	class:PointMassWorld
+run	agent/box2d/pygame_framework.py	/^    def run(self):$/;"	m	class:PygameFramework
+run	gps_main.py	/^    def run(self, itr_load=None):$/;"	m	class:GPSMain
+run_mode	gui/gps_training_gui.py	/^    def run_mode(self):$/;"	m	class:GPSTrainingGUI
+run_next	agent/box2d/arm_world.py	/^    def run_next(self, action):$/;"	m	class:ArmWorld
+run_next	agent/box2d/point_mass_world.py	/^    def run_next(self, action):$/;"	m	class:PointMassWorld
+run_next	agent/box2d/pygame_framework.py	/^    def run_next(self, action):$/;"	m	class:PygameFramework
+run_trial_tf	agent/ros/agent_ros.py	/^    def run_trial_tf(self, policy, time_to_run=5):$/;"	m	class:AgentROS
+sample	agent/agent.py	/^    def sample(self, policy, condition, verbose=True, save=True, noisy=True):$/;"	m	class:Agent
+sample	agent/box2d/agent_box2d.py	/^    def sample(self, policy, condition, verbose=False, save=True, noisy=True):$/;"	m	class:AgentBox2D
+sample	agent/mjc/agent_mjc.py	/^    def sample(self, policy, condition, verbose=True, save=True, noisy=True):$/;"	m	class:AgentMuJoCo
+sample	agent/ros/agent_ros.py	/^    def sample(self, policy, condition, verbose=True, save=True, noisy=True):$/;"	m	class:AgentROS
+save_data_to_npz	gui/util.py	/^def save_data_to_npz(filename, actuator_name, target_number, data_time,$/;"	f
+save_figure	gui/gps_training_gui.py	/^    def save_figure(self, filename):$/;"	m	class:GPSTrainingGUI
+save_model	algorithm/policy_opt/policy_opt_tf.py	/^    def save_model(self, fname):$/;"	m	class:PolicyOptTf
+save_pose_to_npz	gui/util.py	/^def save_pose_to_npz(filename, actuator_name, target_number, data_time, pose):$/;"	f
+save_to_npz	gui/util.py	/^def save_to_npz(filename, key, value):$/;"	f
+serialized_end	proto/gps_pb2.py	/^  serialized_end=143,$/;"	v
+serialized_end	proto/gps_pb2.py	/^  serialized_end=677,$/;"	v
+serialized_end	proto/gps_pb2.py	/^  serialized_end=753,$/;"	v
+serialized_end	proto/gps_pb2.py	/^  serialized_end=850,$/;"	v
+serialized_end	proto/gps_pb2.py	/^  serialized_end=963,$/;"	v
+serialized_pb	proto/gps_pb2.py	/^  serialized_pb=_b('\\n\\tgps.proto\\x12\\x03gps\\"}\\n\\x06Sample\\x12\\x0e\\n\\x01T\\x18\\x01 \\x01(\\r:\\x03\\x31\\x30\\x30\\x12\\n\\n\\x02\\x64X\\x18\\x02 \\x01(\\r\\x12\\n\\n\\x02\\x64U\\x18\\x03 \\x01(\\r\\x12\\n\\n\\x02\\x64O\\x18\\x04 \\x01(\\r\\x12\\r\\n\\x01X\\x18\\x05 \\x03(\\x02\\x42\\x02\\x10\\x01\\x12\\r\\n\\x01U\\x18\\x06 \\x03(\\x02\\x42\\x02\\x10\\x01\\x12\\x0f\\n\\x03obs\\x18\\x07 \\x03(\\x02\\x42\\x02\\x10\\x01\\x12\\x10\\n\\x04meta\\x18\\x08 \\x03(\\x02\\x42\\x02\\x10\\x01*\\x93\\x04\\n\\nSampleType\\x12\\n\\n\\x06\\x41\\x43TION\\x10\\x00\\x12\\x10\\n\\x0cJOINT_ANGLES\\x10\\x01\\x12\\x14\\n\\x10JOINT_VELOCITIES\\x10\\x02\\x12\\x17\\n\\x13\\x45ND_EFFECTOR_POINTS\\x10\\x03\\x12!\\n\\x1d\\x45ND_EFFECTOR_POINT_VELOCITIES\\x10\\x04\\x12 \\n\\x1c\\x45ND_EFFECTOR_POINT_JACOBIANS\\x10\\x05\\x12$\\n END_EFFECTOR_POINT_ROT_JACOBIANS\\x10\\x06\\x12\\x1a\\n\\x16\\x45ND_EFFECTOR_POSITIONS\\x10\\x07\\x12\\x1a\\n\\x16\\x45ND_EFFECTOR_ROTATIONS\\x10\\x08\\x12\\x1a\\n\\x16\\x45ND_EFFECTOR_JACOBIANS\\x10\\t\\x12\\x19\\n\\x15\\x45ND_EFFECTOR_HESSIANS\\x10\\n\\x12\\r\\n\\tRGB_IMAGE\\x10\\x0b\\x12\\x0f\\n\\x0b\\x44\\x45PTH_IMAGE\\x10\\x0c\\x12\\x12\\n\\x0eRGB_IMAGE_SIZE\\x10\\r\\x12\\x11\\n\\rCONTEXT_IMAGE\\x10\\x0e\\x12\\x16\\n\\x12\\x43ONTEXT_IMAGE_SIZE\\x10\\x0f\\x12\\x0e\\n\\nIMAGE_FEAT\\x10\\x10\\x12!\\n\\x1d\\x45ND_EFFECTOR_POINTS_NO_TARGET\\x10\\x11\\x12+\\n\\'END_EFFECTOR_POINT_VELOCITIES_NO_TARGET\\x10\\x12\\x12\\t\\n\\x05NOISE\\x10\\x13\\x12\\x14\\n\\x10TOTAL_DATA_TYPES\\x10\\x14*J\\n\\x0c\\x41\\x63tuatorType\\x12\\r\\n\\tTRIAL_ARM\\x10\\x00\\x12\\x11\\n\\rAUXILIARY_ARM\\x10\\x01\\x12\\x18\\n\\x14TOTAL_ACTUATOR_TYPES\\x10\\x02*_\\n\\x13PositionControlMode\\x12\\x0e\\n\\nNO_CONTROL\\x10\\x00\\x12\\x0f\\n\\x0bJOINT_SPACE\\x10\\x01\\x12\\x0e\\n\\nTASK_SPACE\\x10\\x02\\x12\\x17\\n\\x13TOTAL_CONTROL_MODES\\x10\\x03*o\\n\\x0e\\x43ontrollerType\\x12\\x18\\n\\x14LIN_GAUSS_CONTROLLER\\x10\\x00\\x12\\x14\\n\\x10\\x43\\x41\\x46\\x46\\x45_CONTROLLER\\x10\\x01\\x12\\x11\\n\\rTF_CONTROLLER\\x10\\x02\\x12\\x1a\\n\\x16TOTAL_CONTROLLER_TYPES\\x10\\x03')$/;"	v
+serialized_start	proto/gps_pb2.py	/^  serialized_start=146,$/;"	v
+serialized_start	proto/gps_pb2.py	/^  serialized_start=18,$/;"	v
+serialized_start	proto/gps_pb2.py	/^  serialized_start=679,$/;"	v
+serialized_start	proto/gps_pb2.py	/^  serialized_start=755,$/;"	v
+serialized_start	proto/gps_pb2.py	/^  serialized_start=852,$/;"	v
+set	sample/sample.py	/^    def set(self, sensor_name, sensor_data, t=None):$/;"	m	class:Sample
+setCenter	agent/box2d/pygame_framework.py	/^    def setCenter(self, value):$/;"	m	class:PygameFramework
+setZoom	agent/box2d/pygame_framework.py	/^    def setZoom(self, zoom):$/;"	m	class:PygameFramework
+set_action_bgcolor	gui/gps_training_gui.py	/^    def set_action_bgcolor(self, color, alpha=1.0):$/;"	m	class:GPSTrainingGUI
+set_action_bgcolor	gui/target_setup_gui.py	/^    def set_action_bgcolor(self, color, alpha=1.0):$/;"	m	class:TargetSetupGUI
+set_action_status_message	gui/target_setup_gui.py	/^    def set_action_status_message(self, action, status, message=None):$/;"	m	class:TargetSetupGUI
+set_action_text	gui/gps_training_gui.py	/^    def set_action_text(self, text):$/;"	m	class:GPSTrainingGUI
+set_action_text	gui/target_setup_gui.py	/^    def set_action_text(self, text=''):$/;"	m	class:TargetSetupGUI
+set_bgcolor	gui/textbox.py	/^    def set_bgcolor(self, color, alpha=1.0):$/;"	m	class:Textbox
+set_copy_params	algorithm/policy/tf_policy.py	/^    def set_copy_params(self, param_values):$/;"	m	class:TfPolicy
+set_ent_reg	algorithm/policy_opt/policy_opt_caffe.py	/^    def set_ent_reg(self, ent_reg):$/;"	m	class:PolicyOptCaffe
+set_ent_reg	algorithm/policy_opt/policy_opt_tf.py	/^    def set_ent_reg(self, ent_reg):$/;"	m	class:PolicyOptTf
+set_image_overlays	gui/gps_training_gui.py	/^    def set_image_overlays(self, condition):$/;"	m	class:GPSTrainingGUI
+set_initial_image	gui/image_visualizer.py	/^    def set_initial_image(self, image, alpha=0.3):$/;"	m	class:ImageVisualizer
+set_initial_image	gui/target_setup_gui.py	/^    def set_initial_image(self, event=None):$/;"	m	class:TargetSetupGUI
+set_initial_position	gui/target_setup_gui.py	/^    def set_initial_position(self, event=None):$/;"	m	class:TargetSetupGUI
+set_input_tensor	algorithm/policy_opt/tf_utils.py	/^    def set_input_tensor(self, input_tensor):$/;"	m	class:TfMap
+set_joint_angles	agent/box2d/arm_world.py	/^    def set_joint_angles(self, body1, body2, angle1, angle2):$/;"	m	class:ArmWorld
+set_lim	gui/plotter_3d.py	/^    def set_lim(self, i, xlim, ylim, zlim):$/;"	m	class:Plotter3D
+set_loss_op	algorithm/policy_opt/tf_utils.py	/^    def set_loss_op(self, loss_op):$/;"	m	class:TfMap
+set_meta_data	algorithm/policy/policy.py	/^    def set_meta_data(self, meta):$/;"	m	class:Policy
+set_output_op	algorithm/policy_opt/tf_utils.py	/^    def set_output_op(self, output_op):$/;"	m	class:TfMap
+set_output_text	gui/gps_training_gui.py	/^    def set_output_text(self, text):$/;"	m	class:GPSTrainingGUI
+set_precision_tensor	algorithm/policy_opt/tf_utils.py	/^    def set_precision_tensor(self, precision_tensor):$/;"	m	class:TfMap
+set_status_text	gui/gps_training_gui.py	/^    def set_status_text(self, text):$/;"	m	class:GPSTrainingGUI
+set_target_image	gui/image_visualizer.py	/^    def set_target_image(self, image, alpha=0.3):$/;"	m	class:ImageVisualizer
+set_target_image	gui/target_setup_gui.py	/^    def set_target_image(self, event=None):$/;"	m	class:TargetSetupGUI
+set_target_output_tensor	algorithm/policy_opt/tf_utils.py	/^    def set_target_output_tensor(self, target_output_tensor):$/;"	m	class:TfMap
+set_target_position	gui/target_setup_gui.py	/^    def set_target_position(self, event=None):$/;"	m	class:TargetSetupGUI
+set_text	gui/textbox.py	/^    def set_text(self, text):$/;"	m	class:Textbox
+set_title	gui/plotter_3d.py	/^    def set_title(self, i, title):$/;"	m	class:Plotter3D
+setup	agent/agent_utils.py	/^def setup(value, n):$/;"	f
+setup	algorithm/policy_opt/policy_layers.py	/^    def setup(self, bottom, top):$/;"	m	class:PolicyDataLayer
+setup	algorithm/policy_opt/policy_layers.py	/^    def setup(self, bottom, top):$/;"	m	class:WeightedEuclideanLoss
+singleStep	agent/box2d/settings.py	/^    singleStep = False$/;"	v	class:fwSettings
+sliders	agent/box2d/settings.py	/^sliders = [$/;"	v
+start_display_calculating	gui/gps_training_gui.py	/^    def start_display_calculating(self):$/;"	m	class:GPSTrainingGUI
+stop_display_calculating	gui/gps_training_gui.py	/^    def stop_display_calculating(self):$/;"	m	class:GPSTrainingGUI
+surface	agent/box2d/pygame_framework.py	/^    surface = None$/;"	v	class:PygameDraw
+test_policy	gps_main.py	/^    def test_policy(self, itr, N):$/;"	m	class:GPSMain
+tf_network	algorithm/policy_opt/tf_model_example.py	/^def tf_network(dim_input=27, dim_output=7, batch_size=25, network_config=None):$/;"	f
+tf_obs_msg_to_numpy	agent/ros/ros_utils.py	/^def tf_obs_msg_to_numpy(obs_message):$/;"	f
+tf_policy_to_action_msg	agent/ros/ros_utils.py	/^def tf_policy_to_action_msg(deg_action, action, action_id):$/;"	f
+toggle_initial_image_overlay	gui/image_visualizer.py	/^    def toggle_initial_image_overlay(self, event=None):$/;"	m	class:ImageVisualizer
+toggle_target_image_overlay	gui/image_visualizer.py	/^    def toggle_target_image_overlay(self, event=None):$/;"	m	class:ImageVisualizer
+traj_distr	algorithm/algorithm_utils.py	/^    def traj_distr(self):$/;"	m	class:PolicyInfo
+traj_distr_kl	algorithm/traj_opt/traj_opt_utils.py	/^def traj_distr_kl(new_mu, new_sigma, new_traj_distr, prev_traj_distr, tot=True):$/;"	f
+traj_distr_kl_alt	algorithm/traj_opt/traj_opt_utils.py	/^def traj_distr_kl_alt(new_mu, new_sigma, new_traj_distr, prev_traj_distr, tot=True):$/;"	f
+type	proto/gps_pb2.py	/^      type=None),$/;"	v
+unpack_data_x	agent/agent.py	/^    def unpack_data_x(self, existing_mat, data_types, axes=None):$/;"	m	class:Agent
+unpickle	utility/data_logger.py	/^    def unpickle(self, filename):$/;"	m	class:DataLogger
+update	algorithm/dynamics/dynamics_prior_gmm.py	/^    def update(self, X, U):$/;"	m	class:DynamicsPriorGMM
+update	algorithm/policy/policy_prior.py	/^    def update(self, samples, policy_opt, all_samples, retrain=True):$/;"	m	class:PolicyPrior
+update	algorithm/policy/policy_prior_gmm.py	/^    def update(self, samples, policy_opt, mode='add'):$/;"	m	class:PolicyPriorGMM
+update	algorithm/policy_opt/policy_opt.py	/^    def update(self):$/;"	m	class:PolicyOpt
+update	algorithm/policy_opt/policy_opt_caffe.py	/^    def update(self, obs, tgt_mu, tgt_prc, tgt_wt):$/;"	m	class:PolicyOptCaffe
+update	algorithm/policy_opt/policy_opt_tf.py	/^    def update(self, obs, tgt_mu, tgt_prc, tgt_wt):$/;"	m	class:PolicyOptTf
+update	algorithm/traj_opt/traj_opt.py	/^    def update(self):$/;"	m	class:TrajOpt
+update	algorithm/traj_opt/traj_opt_lqr.py	/^    def update(self):$/;"	m	class:TrajOptLQR
+update	algorithm/traj_opt/traj_opt_lqr_python.py	/^    def update(self, m, algorithm):$/;"	m	class:TrajOptLQRPython
+update	algorithm/traj_opt/traj_opt_pi2.py	/^    def update(self, m, algorithm, use_lqr_actions=False,$/;"	m	class:TrajOptPI2
+update	algorithm/traj_opt/traj_opt_pilqr.py	/^    def update(self, m, algorithm):$/;"	m	class:TrajOptPILQR
+update	gui/gps_training_gui.py	/^    def update(self, itr, algorithm, agent, traj_sample_lists, pol_sample_lists):$/;"	m	class:GPSTrainingGUI
+update	gui/image_visualizer.py	/^    def update(self, image):$/;"	m	class:ImageVisualizer
+update	gui/mean_plotter.py	/^    def update(self, x, t=None):$/;"	m	class:MeanPlotter
+update	gui/realtime_plotter.py	/^    def update(self, x):$/;"	m	class:RealtimePlotter
+update	utility/gmm.py	/^    def update(self, data, K, max_iterations=100):$/;"	m	class:GMM
+update_pi2	algorithm/traj_opt/traj_opt_pi2.py	/^    def update_pi2(self, samples, costs, mean_old, cov_old,$/;"	m	class:TrajOptPI2
+update_prior	algorithm/dynamics/dynamics.py	/^    def update_prior(self, sample):$/;"	m	class:Dynamics
+update_prior	algorithm/dynamics/dynamics_lr.py	/^    def update_prior(self, sample):$/;"	m	class:DynamicsLR
+update_prior	algorithm/dynamics/dynamics_lr_prior.py	/^    def update_prior(self, samples):$/;"	m	class:DynamicsLRPrior
+update_ros	gui/image_visualizer.py	/^    def update_ros(self, image_msg):$/;"	m	class:ImageVisualizer
+update_target_text	gui/target_setup_gui.py	/^    def update_target_text(self):$/;"	m	class:TargetSetupGUI
+values	proto/gps_pb2.py	/^  values=[$/;"	v
+velocityIterations	agent/box2d/settings.py	/^    velocityIterations = 8$/;"	v	class:fwSettings
+viewCenter	agent/box2d/pygame_framework.py	/^    viewCenter = property(lambda self: self._viewCenter\/self._viewZoom,$/;"	v	class:PygameFramework
+viewOffset	agent/box2d/pygame_framework.py	/^    viewOffset = property(lambda self: self._viewOffset,$/;"	v	class:PygameFramework
+viewZoom	agent/box2d/pygame_framework.py	/^    viewZoom = property(lambda self: self._viewZoom, setZoom,$/;"	v	class:PygameFramework
+wait_mode	gui/gps_training_gui.py	/^    def wait_mode(self):$/;"	m	class:GPSTrainingGUI
+write	sample/sample_list.py	/^    def write(self, samples):$/;"	m	class:PickleSampleWriter
+write	sample/sample_list.py	/^    def write(self, samples):$/;"	m	class:SysOutWriter
