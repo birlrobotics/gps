@@ -213,15 +213,23 @@ void GPSPR2Plugin::get_joint_encoder_readings(Eigen::VectorXd &angles, gps::Actu
     {
         if (angles.rows() != passive_arm_joint_state_.size())
             angles.resize(passive_arm_joint_state_.size());
-        for (unsigned i = 0; i < angles.size(); i++)
+        for (unsigned i = 0; i < angles.size(); i++) {
+            // NOTE: the following reading of a seemingly
+            // unchanged variable is actually the reading of
+            // of the latest joint angles.
             angles(i) = passive_arm_joint_state_[i]->position_;
+        }
     }
     else if (arm == gps::TRIAL_ARM)
     {
         if (angles.rows() != active_arm_joint_state_.size())
             angles.resize(active_arm_joint_state_.size());
-        for (unsigned i = 0; i < angles.size(); i++)
+        for (unsigned i = 0; i < angles.size(); i++) {
+            // NOTE: the following reading of a seemingly
+            // unchanged variable is actually the reading of
+            // of the latest joint angles.
             angles(i) = active_arm_joint_state_[i]->position_;
+        }
     }
     else
     {

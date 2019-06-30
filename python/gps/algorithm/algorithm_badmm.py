@@ -41,7 +41,7 @@ class AlgorithmBADMM(Algorithm):
         Args:
             sample_lists: List of SampleList objects for each condition.
         """
-        for m in range(self.M):
+        for m in range(self.M): # M=GMM no. of components, it equals no. of conditions
             self.cur[m].sample_list = sample_lists[m]
 
         self._set_interp_values()
@@ -142,6 +142,15 @@ class AlgorithmBADMM(Algorithm):
             obs_data = np.concatenate((obs_data, samples.get_obs()))
         self.policy_opt.update(obs_data, tgt_mu, tgt_prc, tgt_wt)
 
+
+    # LINK_TO_PAPER: 
+    #   \pi_\theta(u_t|x_t) 
+    #   \sim N(pol_mu, pol_sig) 
+    #   \approx N(K x_t + k, S) => P(u_t, x_t) is Gaussian
+    #   \defequal conditional distribution of P(u_t, x_t)
+    #   So we can first fit P(u_t, x_t), then "conditionalize" it
+    #   This approach allows us to use prior of the Gaussian 
+    #   mean&covariance (normal inverse wishart) in the fitting.
     def _update_policy_fit(self, m, init=False):
         """
         Re-estimate the local policy values in the neighborhood of the

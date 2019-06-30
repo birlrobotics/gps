@@ -216,6 +216,7 @@ class PolicyOptCaffe(PolicyOpt):
                 output[i, t, :] = \
                         self.solver.test_nets[0].forward().values()[0][0]
 
+        # LINK_TO_PAPER: they assume the variance of \pi_\theta is fixed
         pol_sigma = np.tile(np.diag(self.var), [N, T, 1, 1])
         pol_prec = np.tile(np.diag(1.0 / self.var), [N, T, 1, 1])
         pol_det_sigma = np.tile(np.prod(self.var), [N, T])

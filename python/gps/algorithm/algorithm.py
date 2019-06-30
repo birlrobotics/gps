@@ -113,6 +113,9 @@ class Algorithm(object):
                 self.cur[m].traj_info.x0sigma += \
                         Phi + (N*priorm) / (N+priorm) * \
                         np.outer(x0mu-mu0, x0mu-mu0) / (N+n0)
+                # POSSIBLE_ERROR: the denominator of the 
+                # Normal Inverse Wishart Marginal Sigma's
+                # mean seems to be wrong
 
     def _update_trajectories(self):
         """

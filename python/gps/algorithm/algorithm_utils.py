@@ -89,6 +89,8 @@ def estimate_moments(X, mu, covar):
     return ev, em
 
 
+# SKLAW_NOTE: this is Normal Inverse Wishart update
+# dwts: they assume the samples can be weigted in the calculation of mean and covaraince
 def gauss_fit_joint_prior(pts, mu0, Phi, m, n0, dwts, dX, dU, sig_reg):
     """ Perform Gaussian fit to data with a prior. """
     # Build weights matrix.
@@ -101,11 +103,27 @@ def gauss_fit_joint_prior(pts, mu0, Phi, m, n0, dwts, dX, dU, sig_reg):
     # MAP estimate of joint distribution.
     N = dwts.shape[0]
     mu = mun
+
+    # SKLAW_NOTE: The following is marginal sigma of NIW update
     sigma = (N * empsig + Phi + (N * m) / (N + m) *
              np.outer(mun - mu0, mun - mu0)) / (N + n0)
+
+    # SKLAW_NOTE: The following line just wanna make sure sigma is semetric
     sigma = 0.5 * (sigma + sigma.T)
+
     # Add sigma regularization.
     sigma += sig_reg
+
+
+    # SKLAW_NOTE: 
+    # They assume U = (fd) X + fc
+    # => Cov(X, U) = Cov(X, X) (fd)^T
+    #   => (fd)^T = np.linalg.solve( Cov(X, X), Cov(X, U) )
+    #   => (fd)^T = np.linalg.solve( Sigma[0:dimX, 0:dimX], Sigma[0:dimX, dimX:dimX+dimU] )
+    #   => (fd) = np.linalg.solve( Sigma[0:dimX, 0:dimX], Sigma[0:dimX, dimX:dimX+dimU] ) ^T
+    # => \mu_U = (fd) \mu_X + fc
+    #   => fc = \mu_U - (fd) \mu_X
+
     # Conditioning to get dynamics.
     fd = np.linalg.solve(sigma[:dX, :dX], sigma[:dX, dX:dX+dU]).T
     fc = mu[dX:dX+dU] - fd.dot(mu[:dX])
