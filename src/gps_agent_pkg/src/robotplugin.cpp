@@ -83,8 +83,8 @@ void RobotPlugin::initialize_sensors(ros::NodeHandle& n)
 
     // Create all sensors.
     for (int i = 0; i < 2; i++)
-    // TODO: ZDM: read this when more sensors work
-    //for (int i = 0; i < TotalSensorTypes; i++)
+        // TODO: ZDM: read this when more sensors work
+        //for (int i = 0; i < TotalSensorTypes; i++)
     {
         ROS_INFO_STREAM("creating sensor: " + to_string(i));
         boost::shared_ptr<Sensor> sensor(Sensor::create_sensor((SensorType)i,n,this, gps::TRIAL_ARM));
@@ -125,7 +125,7 @@ void RobotPlugin::configure_sensors(OptionsMap &opts)
     // Set sample data format on the actions, which are not handled by any sensor.
     OptionsMap sample_metadata;
     current_time_step_sample_->set_meta_data(
-        gps::ACTION,active_arm_torques_.size(),SampleDataFormatEigenVector,sample_metadata);
+            gps::ACTION,active_arm_torques_.size(),SampleDataFormatEigenVector,sample_metadata);
 
     // configure auxiliary sensors
     for (int i = 0; i < aux_sensors_.size(); i++)
@@ -182,7 +182,7 @@ void RobotPlugin::update_sensors(ros::Time current_time, bool is_controller_step
         sensors_[sensor]->update(this, current_time, is_controller_step);
         if (trial_controller_ != NULL){
             sensors_[sensor]->set_sample_data(current_time_step_sample_,
-                trial_controller_->get_step_counter());
+                    trial_controller_->get_step_counter());
         }
         else {
             sensors_[sensor]->set_sample_data(current_time_step_sample_, 0);
@@ -428,7 +428,7 @@ void RobotPlugin::trial_subscriber_callback(const gps_agent_pkg::TrialCommand::C
             }
             controller_params["noise_"+to_string(t)] = noise;
         }
- 
+
         controller_params["net_param"] = params.net_param;
         controller_params["scale"] = scale;
         controller_params["bias"] = bias;

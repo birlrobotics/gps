@@ -1,5 +1,6 @@
 """ This file defines the main object that runs experiments. """
 
+import pdb
 import matplotlib as mpl
 mpl.use('Qt4Agg')
 
@@ -63,9 +64,11 @@ class GPSMain(object):
             itr_start = self._initialize(itr_load)
 
             for itr in range(itr_start, self._hyperparams['iterations']):
+
                 for cond in self._train_idx:
                     for i in range(self._hyperparams['num_samples']):
                         self._take_sample(itr, cond, i)
+
 
                 traj_sample_lists = [
                     self.agent.get_samples(cond, -self._hyperparams['num_samples'])
@@ -197,7 +200,10 @@ class GPSMain(object):
         else:
             self.agent.sample(
                 pol, cond,
-                verbose=(i < self._hyperparams['verbose_trials'])
+                verbose=(i < self._hyperparams['verbose_trials']),
+                itr=itr,
+                sample_no=i,
+                use_sample_msg_cache=self._hyperparams.get('use_sample_msg_cache', False),
             )
 
     def _take_iteration(self, itr, sample_lists):

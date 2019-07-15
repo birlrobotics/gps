@@ -1,4 +1,5 @@
 """ This file defines the base algorithm class. """
+import pdb
 
 import abc
 import copy
@@ -90,8 +91,8 @@ class Algorithm(object):
         """
         for m in range(self.M):
             cur_data = self.cur[m].sample_list
-            X = cur_data.get_X()
-            U = cur_data.get_U()
+            X = cur_data.get_X() # (samples, time steps, states)
+            U = cur_data.get_U() # (samples, time steps, actions)
 
             # Update prior and fit dynamics.
             self.cur[m].traj_info.dynamics.update_prior(cur_data)

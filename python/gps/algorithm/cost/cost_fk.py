@@ -2,6 +2,7 @@
 import copy
 
 import numpy as np
+import pdb
 
 from gps.algorithm.cost.config import COST_FK
 from gps.algorithm.cost.cost import Cost
@@ -20,6 +21,9 @@ class CostFK(Cost):
         config.update(hyperparams)
         Cost.__init__(self, config)
 
+
+    # SKLAW_NOTE:
+    # 
     def eval(self, sample):
         """
         Evaluate forward kinematics (end-effector penalties) cost.

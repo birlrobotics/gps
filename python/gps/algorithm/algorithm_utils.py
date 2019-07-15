@@ -1,4 +1,5 @@
 """ This file defines utility classes and functions for algorithms. """
+import pdb
 import numpy as np
 
 from gps.utility.general_utils import BundleType
@@ -39,6 +40,7 @@ class TrajectoryInfo(BundleType):
 class PolicyInfo(BundleType):
     """ Collection of policy-related variables. """
     def __init__(self, hyperparams):
+        # SKLAW_NOTE: lambda = lambda_K X + lambda_k
         T, dU, dX = hyperparams['T'], hyperparams['dU'], hyperparams['dX']
         variables = {
             'lambda_k': np.zeros((T, dU)),  # Dual variables.
@@ -91,6 +93,8 @@ def estimate_moments(X, mu, covar):
 
 # SKLAW_NOTE: this is Normal Inverse Wishart update
 # dwts: they assume the samples can be weigted in the calculation of mean and covaraince
+# X is the condition variable
+# U is the random variable
 def gauss_fit_joint_prior(pts, mu0, Phi, m, n0, dwts, dX, dU, sig_reg):
     """ Perform Gaussian fit to data with a prior. """
     # Build weights matrix.
@@ -102,7 +106,7 @@ def gauss_fit_joint_prior(pts, mu0, Phi, m, n0, dwts, dX, dU, sig_reg):
     empsig = 0.5 * (empsig + empsig.T)
     # MAP estimate of joint distribution.
     N = dwts.shape[0]
-    mu = mun
+    mu = mun # POSSIBLE_ERROR: mu is set to emperical mean, prior is not used at all
 
     # SKLAW_NOTE: The following is marginal sigma of NIW update
     sigma = (N * empsig + Phi + (N * m) / (N + m) *
@@ -115,18 +119,13 @@ def gauss_fit_joint_prior(pts, mu0, Phi, m, n0, dwts, dX, dU, sig_reg):
     sigma += sig_reg
 
 
-    # SKLAW_NOTE: 
-    # They assume U = (fd) X + fc
-    # => Cov(X, U) = Cov(X, X) (fd)^T
-    #   => (fd)^T = np.linalg.solve( Cov(X, X), Cov(X, U) )
-    #   => (fd)^T = np.linalg.solve( Sigma[0:dimX, 0:dimX], Sigma[0:dimX, dimX:dimX+dimU] )
-    #   => (fd) = np.linalg.solve( Sigma[0:dimX, 0:dimX], Sigma[0:dimX, dimX:dimX+dimU] ) ^T
-    # => \mu_U = (fd) \mu_X + fc
-    #   => fc = \mu_U - (fd) \mu_X
+
+    #SKLAW_NOTE: Read overleaf note. Inference(ref{inference:1_11_3})
 
     # Conditioning to get dynamics.
     fd = np.linalg.solve(sigma[:dX, :dX], sigma[:dX, dX:dX+dU]).T
     fc = mu[dX:dX+dU] - fd.dot(mu[:dX])
+
     dynsig = sigma[dX:dX+dU, dX:dX+dU] - fd.dot(sigma[:dX, :dX]).dot(fd.T)
     dynsig = 0.5 * (dynsig + dynsig.T)
     return fd, fc, dynsig

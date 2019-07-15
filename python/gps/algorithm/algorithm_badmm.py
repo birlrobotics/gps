@@ -1,4 +1,5 @@
 """ This file defines the BADMM-based GPS algorithm. """
+import pdb
 import copy
 import logging
 
@@ -129,8 +130,8 @@ class AlgorithmBADMM(Algorithm):
                                           [N, 1, 1])
                 for i in range(N):
                     mu[i, t, :] = \
-                            (traj.K[t, :, :].dot(X[i, t, :]) + traj.k[t, :]) - \
-                            np.linalg.solve(
+                            (traj.K[t, :, :].dot(X[i, t, :]) + traj.k[t, :]) \
+                            - np.linalg.solve(
                                 prc[i, t, :, :] / pol_info.pol_wt[t],
                                 pol_info.lambda_K[t, :, :].dot(X[i, t, :]) + \
                                         pol_info.lambda_k[t, :]
@@ -166,8 +167,12 @@ class AlgorithmBADMM(Algorithm):
         pol_info = self.cur[m].pol_info
         X = samples.get_X()
         obs = samples.get_obs().copy()
+
+        # SKLAW_NOTE: use DNN to map obs into actions, 
+        #   which is N(pol_mu, pol_sig)
         pol_mu, pol_sig = self.policy_opt.prob(obs)[:2]
         pol_info.pol_mu, pol_info.pol_sig = pol_mu, pol_sig
+
 
         # Update policy prior.
         policy_prior = pol_info.policy_prior
@@ -386,7 +391,12 @@ class AlgorithmBADMM(Algorithm):
         kl_l, kl_lm = np.zeros((N, T)), np.zeros(T)
         # Compute policy mean and covariance at each sample.
         pol_mu, _, pol_prec, pol_det_sigma = self.policy_opt.prob(obs.copy())
+
         # Compute KL divergence.
+
+        # SKLAW_NOTE: 
+        #   \Sigma_1 is traj.linearGaussianController.Sigma
+        #   \Sigma_2 is dnnPolicy.Sigma
         for t in range(T):
             # Compute trajectory action at sample.
             traj_mu = np.zeros((N, dU))
@@ -394,6 +404,13 @@ class AlgorithmBADMM(Algorithm):
                 traj_mu[i, :] = traj.K[t, :, :].dot(X[i, t, :]) + traj.k[t, :]
             diff = pol_mu[:, t, :] - traj_mu
             tr_pp_ct = pol_prec[:, t, :, :] * traj.pol_covar[t, :, :]
+
+            # traj.linearGuassianController.Sigma has already been cholesky decoposed
+            # det|Simga| = det|A A^T| = det|A| det|A^T| = (det|A|)^2
+            # => 1/2 log det|Sigma| = 1/2 log (det|A|^2) = log det|A|
+            # Since cholesky decomposition returns triangular matrix, A is triangular
+            # => det|A| = mulplication of diagonal of A
+            #   => log det|A| = sum( log( diag(A) ) )
             k_ln_det_ct = 0.5 * dU + np.sum(
                 np.log(np.diag(traj.chol_pol_covar[t, :, :]))
             )
@@ -402,32 +419,61 @@ class AlgorithmBADMM(Algorithm):
             #            depend on state!!!!
             #            (Only the last term makes this assumption.)
             d_pp_d = np.sum(diff * (diff.dot(pol_prec[1, t, :, :])), axis=1)
-            kl[:, t] = 0.5 * np.sum(np.sum(tr_pp_ct, axis=1), axis=1) - \
-                    k_ln_det_ct + 0.5 * ln_det_cp + 0.5 * d_pp_d
+
+            kl[:, t] =  \
+                0.5 * np.sum(np.sum(tr_pp_ct, axis=1), axis=1)  \
+                - k_ln_det_ct  \
+                + 0.5 * ln_det_cp  \
+                + 0.5 * d_pp_d
+
+            # Fix time t, for each sample, we have a KL-diverge value
+            # Now we can proceed with Monte-Carlo Approximate -- simply averge them
             tr_pp_ct_m = np.mean(tr_pp_ct, axis=0)
-            kl_m[t] = 0.5 * np.sum(np.sum(tr_pp_ct_m, axis=0), axis=0) - \
-                    k_ln_det_ct + 0.5 * np.mean(ln_det_cp) + \
-                    0.5 * np.mean(d_pp_d)
+            kl_m[t] =  \
+                0.5 * np.sum(np.sum(tr_pp_ct_m, axis=0), axis=0)  \
+                - k_ln_det_ct  \
+                + 0.5 * np.mean(ln_det_cp)  \
+                + 0.5 * np.mean(d_pp_d) 
+
+
+
             # Compute trajectory action at sample with Lagrange
             # multiplier.
+
+            # SKLAW_NOTE: pol_info.lambda_K/lambda_k is the linearization of 
+            #   \pi_\theta(u|x), not \pi_\theta(u|o) (Then what is the role of pol_info.pol_K/k???)
+            
+            # POSSIBLE_ERROR: the following computation seems to make no sense
+            #   (And it's not used by the code so far)
+
             traj_mu = np.zeros((N, dU))
             for i in range(N):
                 traj_mu[i, :] = \
-                        (traj.K[t, :, :] - pol_info.lambda_K[t, :, :]).dot(
-                            X[i, t, :]
-                        ) + (traj.k[t, :] - pol_info.lambda_k[t, :])
+                    (traj.K[t, :, :] - pol_info.lambda_K[t, :, :]).dot( \
+                        X[i, t, :] \
+                    )  \
+                    + (traj.k[t, :] - pol_info.lambda_k[t, :]) 
+
             # Compute KL divergence with Lagrange multiplier.
             diff_l = pol_mu[:, t, :] - traj_mu
             d_pp_d_l = np.sum(diff_l * (diff_l.dot(pol_prec[1, t, :, :])),
                               axis=1)
-            kl_l[:, t] = 0.5 * np.sum(np.sum(tr_pp_ct, axis=1), axis=1) - \
-                    k_ln_det_ct + 0.5 * ln_det_cp + 0.5 * d_pp_d_l
-            kl_lm[t] = 0.5 * np.sum(np.sum(tr_pp_ct_m, axis=0), axis=0) - \
-                    k_ln_det_ct + 0.5 * np.mean(ln_det_cp) + \
-                    0.5 * np.mean(d_pp_d_l)
+            kl_l[:, t] =  \
+                0.5 * np.sum(np.sum(tr_pp_ct, axis=1), axis=1)  \
+                - k_ln_det_ct  \
+                + 0.5 * ln_det_cp  \
+                + 0.5 * d_pp_d_l 
+
+            kl_lm[t] =  \
+                0.5 * np.sum(np.sum(tr_pp_ct_m, axis=0), axis=0)  \
+                - k_ln_det_ct  \
+                + 0.5 * np.mean(ln_det_cp)  \
+                + 0.5 * np.mean(d_pp_d_l) 
+
         return kl_m, kl, kl_lm, kl_l
 
     def _estimate_cost(self, traj_distr, traj_info, pol_info, m):
+        pdb.set_trace()
         """
         Compute Laplace approximation to expected cost.
         Args:
@@ -436,6 +482,8 @@ class AlgorithmBADMM(Algorithm):
             pol_info: Policy linearization info.
             m: Condition number.
         """
+
+
         # Constants.
         T, dU, dX = self.T, self.dU, self.dX
 
@@ -467,7 +515,8 @@ class AlgorithmBADMM(Algorithm):
                     0.5 * np.sum(traj_distr.pol_covar[t, :, :] * inv_pS) + \
                     0.5 * np.sum(
                         sigma[t, :dX, :dX] * Kbar.T.dot(inv_pS).dot(Kbar)
-                    ) + np.sum(
+                    ) + \
+                    np.sum(
                         np.log(np.diag(pol_info.chol_pol_S[t, :, :]))
                     ) - np.sum(
                         np.log(np.diag(traj_distr.chol_pol_covar[t, :, :]))
@@ -524,8 +573,8 @@ class AlgorithmBADMM(Algorithm):
                 KB.T.dot(inv_pol_S).dot(kB), -inv_pol_S.dot(kB)
             ])
             wt = pol_info.pol_wt[t]
-            fCm[t, :, :] = (Cm[t, :, :] + TKLm[t, :, :] * eta +
-                            PKLm[t, :, :] * wt) / (eta + wt + multiplier)
+            fCm[t, :, :] = \
+                (Cm[t, :, :] + TKLm[t, :, :] * eta + PKLm[t, :, :] * wt) / (eta + wt + multiplier)
             fcv[t, :] = (cv[t, :] + TKLv[t, :] * eta +
                          PKLv[t, :] * wt) / (eta + wt + multiplier)
 

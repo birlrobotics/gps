@@ -137,7 +137,7 @@ class AgentROS(Agent):
                        condition_data[AUXILIARY_ARM]['data'])
         time.sleep(2.0)  # useful for the real robot, so it stops completely
 
-    def sample(self, policy, condition, verbose=True, save=True, noisy=True):
+    def sample(self, policy, condition, verbose=True, save=True, noisy=True, itr=None, sample_no=None, use_sample_msg_cache=False):
         """
         Reset and execute a policy and collect a sample.
         Args:
@@ -169,26 +169,46 @@ class AgentROS(Agent):
         trial_command.frequency = self._hyperparams['frequency']
         ee_points = self._hyperparams['end_effector_points']
         trial_command.ee_points = ee_points.reshape(ee_points.size).tolist()
-        trial_command.ee_points_tgt = \
-                self._hyperparams['ee_points_tgt'][condition].tolist()
+        trial_command.ee_points_tgt = self._hyperparams['ee_points_tgt'][condition].tolist()
         trial_command.state_datatypes = self._hyperparams['state_include']
         trial_command.obs_datatypes = self._hyperparams['state_include']
 
-        if self.use_tf is False:
-            sample_msg = self._trial_service.publish_and_wait(
-                trial_command, timeout=self._hyperparams['trial_timeout']
-            )
-            sample = msg_to_sample(sample_msg, self)
-            if save:
-                self._samples[condition].append(sample)
-            return sample
+
+
+        import os, pickle
+        sample_msg_cache_file = os.path.join("sample_msg_cache@itr%scond%ssampleno%s"%(itr, condition, sample_no))
+        if os.path.isfile(sample_msg_cache_file):
+            with open(sample_msg_cache_file, 'rb') as scf:
+                _sample_msg_cache = pickle.load(scf)
         else:
-            self._trial_service.publish(trial_command)
-            sample_msg = self.run_trial_tf(policy, time_to_run=self._hyperparams['trial_timeout'])
+            _sample_msg_cache = None
+
+        if use_sample_msg_cache is True and _sample_msg_cache is not None:
+            sample_msg = _sample_msg_cache
+        else:           
+            sample_msg = None
+
+        if self.use_tf is False:
+            if sample_msg is None:
+                sample_msg = self._trial_service.publish_and_wait(
+                    trial_command, timeout=self._hyperparams['trial_timeout']
+                )
             sample = msg_to_sample(sample_msg, self)
             if save:
                 self._samples[condition].append(sample)
-            return sample
+        else:
+            if sample_msg is None:
+                self._trial_service.publish(trial_command)
+                sample_msg = self.run_trial_tf(policy, time_to_run=self._hyperparams['trial_timeout'])
+            sample = msg_to_sample(sample_msg, self)
+            if save:
+                self._samples[condition].append(sample)
+
+
+        with open(sample_msg_cache_file, 'wb') as scf:
+            pickle.dump(sample_msg, scf)
+
+        return sample
 
     def run_trial_tf(self, policy, time_to_run=5):
         """ Run an async controller from a policy. The async controller receives observations from ROS subscribers

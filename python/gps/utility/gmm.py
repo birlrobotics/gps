@@ -1,4 +1,5 @@
 """ This file defines a Gaussian mixture model class. """
+import pdb
 import logging
 
 import numpy as np
@@ -108,6 +109,10 @@ class GMM(object):
         logwts = logobs - logsum(logobs, axis=1)
 
         # Average the cluster probabilities.
+        # logwts = log( 
+        #               (sum_{i=1}^N weight vector for point i) / N
+        #          )
+        #        = log sum exp (logweight vector for point i) - log N
         logwts = logsum(logwts, axis=0) - np.log(data.shape[0])
         return logwts.T
 

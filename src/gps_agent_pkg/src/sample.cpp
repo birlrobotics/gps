@@ -6,17 +6,17 @@ using namespace gps_control;
 
 Sample::Sample(int T)
 {
-	ROS_INFO("Initializing Sample with T=%d", T);
-	T_ = T;
-	internal_data_size_.resize((int)gps::TOTAL_DATA_TYPES);
-	internal_data_format_.resize((int)gps::TOTAL_DATA_TYPES);
-	meta_data_.resize((int)gps::TOTAL_DATA_TYPES);
-	// Fill in all possible sample types
-	for(int i=0; i<gps::TOTAL_DATA_TYPES; i++){
-		internal_data_[(gps::SampleType)i].resize(T);
-		internal_data_size_[i] = -1; //initialize to -1
-	}
-  ROS_INFO("done sample constructor");
+    ROS_INFO("Initializing Sample with T=%d", T);
+    T_ = T;
+    internal_data_size_.resize((int)gps::TOTAL_DATA_TYPES);
+    internal_data_format_.resize((int)gps::TOTAL_DATA_TYPES);
+    meta_data_.resize((int)gps::TOTAL_DATA_TYPES);
+    // Fill in all possible sample types
+    for(int i=0; i<gps::TOTAL_DATA_TYPES; i++){
+        internal_data_[(gps::SampleType)i].resize(T);
+        internal_data_size_[i] = -1; //initialize to -1
+    }
+    ROS_INFO("done sample constructor");
 }
 
 Sample::~Sample()
@@ -40,14 +40,14 @@ void Sample::set_data_vector(int t, gps::SampleType type, double *data, int data
         Eigen::VectorXd &vector = boost::get<Eigen::VectorXd>(internal_data_[type][t]);
         if (vector.rows() != data_rows || data_cols != 1)
             ROS_ERROR("Invalid size in set_data_vector! %i vs %i and cols %i for type %i",
-                vector.rows(), data_rows, data_cols, (int)type);
+                    vector.rows(), data_rows, data_cols, (int)type);
         memcpy(vector.data(), data, sizeof(double) * data_rows * data_cols);
     }
     else if (data_format == SampleDataFormatEigenMatrix) {
         Eigen::MatrixXd &matrix = boost::get<Eigen::MatrixXd>(internal_data_[type][t]);
         if (matrix.rows() != data_rows || matrix.cols() != data_cols)
             ROS_ERROR("Invalid size in set_data_vector! %i vs %i and %i vs %i for type %i",
-                matrix.rows(), data_rows, matrix.cols(), data_cols, (int)type);
+                    matrix.rows(), data_rows, matrix.cols(), data_cols, (int)type);
         memcpy(matrix.data(), data, sizeof(double) * data_rows * data_cols);
     }
     else {
@@ -111,46 +111,46 @@ void Sample::get_meta_data(gps::SampleType type, int &data_size, SampleDataForma
 
 void Sample::get_state(int t, Eigen::VectorXd &x) const
 {
-	x.fill(0.0);
+    x.fill(0.0);
     return;
 }
 
 void Sample::get_obs(int t, Eigen::VectorXd &obs) const
 {
-	obs.fill(0.0);
+    obs.fill(0.0);
     return;
 }
 
 void Sample::get_data_all_timesteps(Eigen::VectorXd &data, gps::SampleType datatype){
-	int size = internal_data_size_[(int)datatype];
-	data.resize(size*T_);
-	std::vector<gps::SampleType> dtype_vector;
-	dtype_vector.push_back(datatype);
+    int size = internal_data_size_[(int)datatype];
+    data.resize(size*T_);
+    std::vector<gps::SampleType> dtype_vector;
+    dtype_vector.push_back(datatype);
 
-	Eigen::VectorXd tmp_data;
-	for(int t=0; t<T_; t++){
-		get_data(t, tmp_data, dtype_vector);
-		// Fill in original data
-		for(int i=0; i<size; i++){
-			data[t*size+i] = tmp_data[i];
-		}
-	}
+    Eigen::VectorXd tmp_data;
+    for(int t=0; t<T_; t++){
+        get_data(t, tmp_data, dtype_vector);
+        // Fill in original data
+        for(int i=0; i<size; i++){
+            data[t*size+i] = tmp_data[i];
+        }
+    }
 }
 
 void Sample::get_data(int T, Eigen::VectorXd &data, gps::SampleType datatype){
-	int size = internal_data_size_[(int)datatype];
-	data.resize(size*T);
-	std::vector<gps::SampleType> dtype_vector;
-	dtype_vector.push_back(datatype);
+    int size = internal_data_size_[(int)datatype];
+    data.resize(size*T);
+    std::vector<gps::SampleType> dtype_vector;
+    dtype_vector.push_back(datatype);
 
-	Eigen::VectorXd tmp_data;
-	for(int t=0; t<T; t++){
-		get_data(t, tmp_data, dtype_vector);
-		// Fill in original data
-		for(int i=0; i<size; i++){
-			data[t*size+i] = tmp_data[i];
-		}
-	}
+    Eigen::VectorXd tmp_data;
+    for(int t=0; t<T; t++){
+        get_data(t, tmp_data, dtype_vector);
+        // Fill in original data
+        for(int i=0; i<size; i++){
+            data[t*size+i] = tmp_data[i];
+        }
+    }
 }
 
 void Sample::get_shape(gps::SampleType sample_type, std::vector<int> &shape)
@@ -174,12 +174,12 @@ void Sample::get_data(int t, Eigen::VectorXd &data, std::vector<gps::SampleType>
     // Calculate size
     int total_size = 0;
     for(int i=0; i<datatypes.size(); i++){
-	int dtype = (int)datatypes[i];
-	if(dtype >= internal_data_size_.size()){
-	    ROS_ERROR("Requested size of dtype %d, but internal_data_size_ only has %d elements", dtype,
-		      internal_data_size_.size());
-	}
-	total_size += internal_data_size_[dtype];
+        int dtype = (int)datatypes[i];
+        if(dtype >= internal_data_size_.size()){
+            ROS_ERROR("Requested size of dtype %d, but internal_data_size_ only has %d elements", dtype,
+                    internal_data_size_.size());
+        }
+        total_size += internal_data_size_[dtype];
     }
 
     data.resize(total_size);
@@ -188,29 +188,29 @@ void Sample::get_data(int t, Eigen::VectorXd &data, std::vector<gps::SampleType>
     // Fill in data
     int current_idx = 0;
     for(int i=0; i<datatypes.size(); i++){
-	int dtype = (int)datatypes[i];
-	if(dtype >= internal_data_.size()){
-	    ROS_ERROR("Requested internal data of dtype %d, but internal_data_ only has %d elements", dtype,
-		      internal_data_.size());
-	}
-	const SampleList &sample_list = internal_data_[datatypes[i]];
-	const SampleVariant &sample_variant = sample_list[t];
-	int size = internal_data_size_[dtype];
+        int dtype = (int)datatypes[i];
+        if(dtype >= internal_data_.size()){
+            ROS_ERROR("Requested internal data of dtype %d, but internal_data_ only has %d elements", dtype,
+                    internal_data_.size());
+        }
+        const SampleList &sample_list = internal_data_[datatypes[i]];
+        const SampleVariant &sample_variant = sample_list[t];
+        int size = internal_data_size_[dtype];
 
-	//Handling for specific datatypes
-	if(internal_data_format_[dtype] == SampleDataFormatEigenVector){
-	    const Eigen::VectorXd &sensor_data = boost::get<Eigen::VectorXd>(sample_variant);
-	    data.segment(current_idx, size) = sensor_data;
-	    current_idx += size;
-	}else if (internal_data_format_[dtype] == SampleDataFormatEigenMatrix){
-	    Eigen::MatrixXd sensor_data = boost::get<Eigen::MatrixXd>(sample_variant).transpose();
+        //Handling for specific datatypes
+        if(internal_data_format_[dtype] == SampleDataFormatEigenVector){
+            const Eigen::VectorXd &sensor_data = boost::get<Eigen::VectorXd>(sample_variant);
+            data.segment(current_idx, size) = sensor_data;
+            current_idx += size;
+        }else if (internal_data_format_[dtype] == SampleDataFormatEigenMatrix){
+            Eigen::MatrixXd sensor_data = boost::get<Eigen::MatrixXd>(sample_variant).transpose();
             Eigen::VectorXd flattened_mat(Eigen::Map<Eigen::VectorXd>(sensor_data.data(), sensor_data.size()));
-	    flattened_mat.resize(sensor_data.cols()*sensor_data.rows(), 1);
-	    data.segment(current_idx, size) = flattened_mat;
-	    current_idx += size;
-	}else {
-	    ROS_ERROR("Datatypes currently must be in Eigen::Vector/Eigen::Matrix format. Offender: dtype=%d", dtype);
-	}
+            flattened_mat.resize(sensor_data.cols()*sensor_data.rows(), 1);
+            data.segment(current_idx, size) = flattened_mat;
+            current_idx += size;
+        }else {
+            ROS_ERROR("Datatypes currently must be in Eigen::Vector/Eigen::Matrix format. Offender: dtype=%d", dtype);
+        }
 
     }
 
@@ -218,7 +218,7 @@ void Sample::get_data(int t, Eigen::VectorXd &data, std::vector<gps::SampleType>
 }
 
 int Sample::get_T(){
-	return T_;
+    return T_;
 }
 
 

@@ -61,7 +61,7 @@ class DynamicsPriorGMM(object):
             U: A N x T x dU matrix of sequential control data.
         """
         # Constants.
-        T = X.shape[1] - 1
+        T = X.shape[1] - 1 # subtract 1 such that X_{T+1} is within range
 
         # Append data to dataset.
         if self.X is None:
@@ -83,11 +83,11 @@ class DynamicsPriorGMM(object):
         Do = X.shape[2] + U.shape[2] + X.shape[2]  #TODO: Use Xtgt.
 
         # Create dataset.
-        N = self.X.shape[0]
+        N = self.X.shape[0] # amount of samples
         xux = np.reshape(
             np.c_[self.X[:, :T, :], self.U[:, :T, :], self.X[:, 1:(T+1), :]],
             [T * N, Do]
-        )
+        ) # Thus the dataset doesn't discriminate time steps
 
         # Choose number of clusters.
         K = int(max(2, min(self._max_clusters,

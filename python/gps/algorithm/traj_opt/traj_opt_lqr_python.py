@@ -1,4 +1,5 @@
 """ This file defines code for iLQG-based trajectory optimization. """
+import pdb
 import logging
 import copy
 
@@ -242,14 +243,14 @@ class TrajOptLQRPython(TrajOpt):
         for t in range(T):
             sigma[t, :, :] = np.vstack([
                 np.hstack([
-                    sigma[t, idx_x, idx_x],
-                    sigma[t, idx_x, idx_x].dot(traj_distr.K[t, :, :].T)
+                    sigma[t, idx_x, idx_x], # Cov(X_t, X_t)
+                    sigma[t, idx_x, idx_x].dot(traj_distr.K[t, :, :].T) # Cov(X_t, U_t) = Cov(X_t, X_t) K^T
                 ]),
                 np.hstack([
-                    traj_distr.K[t, :, :].dot(sigma[t, idx_x, idx_x]),
+                    traj_distr.K[t, :, :].dot(sigma[t, idx_x, idx_x]), # Cov(U_t, x_t) = K Cov(X_t, X_t)
                     traj_distr.K[t, :, :].dot(sigma[t, idx_x, idx_x]).dot(
                         traj_distr.K[t, :, :].T
-                    ) + traj_distr.pol_covar[t, :, :]
+                    ) + traj_distr.pol_covar[t, :, :]  # Cov(U_t, U_t) = K Cov(X_t, X_t) K^T              
                 ])
             ])
             mu[t, :] = np.hstack([
@@ -406,6 +407,8 @@ class TrajOptLQRPython(TrajOpt):
                     )
 
                 # Compute value function.
+
+                # SKLAW_NOTE: K = -Qt_{uu}^{-1} Qt_{ux}
                 if (self.cons_per_step or
                     not self._hyperparams['update_in_bwd_pass']):
                     Vxx[t, :, :] = Qtt[t, idx_x, idx_x] + \

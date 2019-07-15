@@ -185,6 +185,8 @@ class PolicyOptCaffe(PolicyOpt):
         self.policy.chol_pol_covar = np.diag(np.sqrt(self.var))
         return self.policy
 
+    # SKLAW_NOTE: use DNN to map obs to mean of the Gaussian distribution of action
+    #  whose variance is pre-defined 
     def prob(self, obs):
         """
         Run policy forward.

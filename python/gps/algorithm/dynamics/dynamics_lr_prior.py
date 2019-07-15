@@ -17,8 +17,8 @@ class DynamicsLRPrior(Dynamics):
 
     def update_prior(self, samples):
         """ Update dynamics prior. """
-        X = samples.get_X()
-        U = samples.get_U()
+        X = samples.get_X() # (samples, time steps, states)
+        U = samples.get_U() # (samples, time steps, actions)
         self.prior.update(X, U)
 
     def get_prior(self):
@@ -43,11 +43,14 @@ class DynamicsLRPrior(Dynamics):
         # Fit dynamics with least squares regression.
         dwts = (1.0 / N) * np.ones(N)
         for t in range(T - 1):
-            Ys = np.c_[X[:, t, :], U[:, t, :], X[:, t+1, :]]
+            Ys = np.c_[X[:, t, :], U[:, t, :], X[:, t+1, :]] # (samples, dynmaics at time step t)
             # Obtain Normal-inverse-Wishart prior.
             mu0, Phi, mm, n0 = self.prior.eval(dX, dU, Ys)
             sig_reg = np.zeros((dX+dU+dX, dX+dU+dX))
             sig_reg[it, it] = self._hyperparams['regularization']
+
+            # 0:dX+dU, condition variables are X_t, U_t
+            # dX+dU:dX+dU+dX, random variable is X_{t+1}
             Fm, fv, dyn_covar = gauss_fit_joint_prior(Ys,
                         mu0, Phi, mm, n0, dwts, dX+dU, dX, sig_reg)
             self.Fm[t, :, :] = Fm
