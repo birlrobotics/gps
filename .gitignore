@@ -96,3 +96,12 @@ experiments/**/data_files/
 experiments/**/log.txt
 experiments/**/*.png
 .previous_experiment
+
+*.session.*
+*.session
+
+src/gps_agent_pkg/atomic_configure/
+src/gps_agent_pkg/catkin/
+src/gps_agent_pkg/catkin_generated/
+src/gps_agent_pkg/devel/
+tags
