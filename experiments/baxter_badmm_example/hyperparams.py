@@ -59,13 +59,16 @@ reset_conditions = []
 
 # Set up each condition.
 for i in xrange(common['conditions']):
-
     ja_x0, ee_pos_x0, ee_rot_x0 = load_pose_from_npz(
         common['target_filename'], 'trial_arm', str(i), 'initial'
     )
+    ja_x0 = [0.0, -0.55, 0.0, 0.75, 0.0, 1.26, 0.0]
+
     ja_aux, _, _ = load_pose_from_npz(
         common['target_filename'], 'auxiliary_arm', str(i), 'initial'
     )
+    ja_aux = [0.0, -0.55, 0.0, 0.75, 0.0, 1.26, 0.0]
+
     _, ee_pos_tgt, ee_rot_tgt = load_pose_from_npz(
         common['target_filename'], 'trial_arm', str(i), 'target'
     )
