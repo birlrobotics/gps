@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>gps_agent_pkg</name>
+  <version>0.0.0</version>
+  <description>The gps_agent_pkg package</description>
+
+  <maintainer email="todo@todo.todo">todo</maintainer>
+
+
+  <license>TODO</license>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+
+  <export>
+
+  </export>
+</package>
