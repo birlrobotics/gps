@@ -8,7 +8,7 @@ include($ENV{ROS_ROOT}/core/rosbuild/rosbuild.cmake)
 #  Release        : w/o debug symbols, w/ optimization
 #  RelWithDebInfo : w/ debug symbols, w/ optimization
 #  MinSizeRel     : w/o debug symbols, w/ optimization, stripped binaries
-set(ROS_BUILD_TYPE RelWithDebInfo)
+set(ROS_BUILD_TYPE Debug)
 
 rosbuild_init()
 
@@ -16,6 +16,16 @@ rosbuild_init()
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 #set the default path for built libraries to the "lib" directory
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
+
+find_package(catkin REQUIRED COMPONENTS message_generation std_msgs)
+add_message_files(
+    FILES CaffeParams.msg DataRequest.msg LinGaussParams.msg RelaxCommand.msg TfActionCommand.msg TfParams.msg ControllerParams.msg DataType.msg PositionCommand.msg SampleResult.msg TfObsData.msg TrialCommand.msg
+)
+
+generate_messages(
+  DEPENDENCIES
+  std_msgs 
+)
 
 #uncomment if you have defined messages
 rosbuild_genmsg()
@@ -106,4 +116,6 @@ endif (USE_CAFFE)
 
 rosbuild_link_boost(gps_agent_lib thread)# smart_ptr)
 
-catkin_package()
+catkin_package(
+    CATKIN_DEPENDS message_runtime std_msgs
+)
