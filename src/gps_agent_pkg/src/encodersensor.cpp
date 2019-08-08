@@ -36,6 +36,8 @@ EncoderSensor::EncoderSensor(ros::NodeHandle& n, RobotPlugin *plugin, gps::Actua
     end_effector_points_target_.fill(0.0);
 
     // Resize point jacobians
+
+    // The following line is useless, it'll be resized again elsewhere 
     point_jacobians_.resize(3, previous_angles_.size());
     point_jacobians_rot_.resize(3, previous_angles_.size());
 
@@ -77,6 +79,11 @@ void EncoderSensor::update(RobotPlugin *plugin, ros::Time current_time, bool is_
         // Run the solvers.
         fk_solver_->JntToCart(temp_joint_array_, temp_tip_pose_);
         jac_solver_->JntToJac(temp_joint_array_, temp_jacobian_);
+
+        // SKLAW_NOTE: jacobian is a 6x7 matrix, 
+        //  6 consists of linear.velocity.x/y/z and angular.velocity.x/y/z of the endpoint
+        //  7 are the joint angles 
+
         // Store position, rotation, and Jacobian.
         for (unsigned i = 0; i < 3; i++)
             previous_position_(i) = temp_tip_pose_.p(i);
@@ -97,19 +104,28 @@ void EncoderSensor::update(RobotPlugin *plugin, ros::Time current_time, bool is_
         unsigned n_actuator = previous_angles_.size();
 
         for(int i=0; i<n_points_; i++){
+
             unsigned site_start = i*3;
             Eigen::VectorXd ovec = end_effector_points_.col(i);
 
             for(unsigned j=0; j<3; j++){
                 for(unsigned k=0; k<n_actuator; k++){
+                    // SKLAW_NOTE: Initializing point jacobian by copying end effector link jacobian into them.
+                    //  Effectively we're copying some 3x7 matrix to multiple locations. 
+                    //  They're either position or rotation(euler) jacobian of a certain end point  
                     point_jacobians_(site_start+j, k) = temp_jacobian_(j,k);
                     point_jacobians_rot_(site_start+j, k) = temp_jacobian_(j+3,k);
                 }
             }
 
+            // SKLAW_NOTE: since we assume the end points (offset ones) are merely offset of the end effector link
+            //  their angular velocity will be the same as the end effector link, so they're all set now.
+            //  However, their linear velocity will be different than the end effector link, so now we're gonna patch this
+            
             // Compute site Jacobian.
             ovec = previous_rotation_*ovec;
             for(unsigned k=0; k<n_actuator; k++){
+                // SKLAW_LAW: the following is corss product of Jac_rot and Rv. See overleaf note inference:jac_vel_of_offset_endpoint
                 point_jacobians_(site_start  , k) += point_jacobians_rot_(site_start+1, k)*ovec[2] - point_jacobians_rot_(site_start+2, k)*ovec[1];
                 point_jacobians_(site_start+1, k) += point_jacobians_rot_(site_start+2, k)*ovec[0] - point_jacobians_rot_(site_start  , k)*ovec[2];
                 point_jacobians_(site_start+2, k) += point_jacobians_rot_(site_start  , k)*ovec[1] - point_jacobians_rot_(site_start+1, k)*ovec[0];

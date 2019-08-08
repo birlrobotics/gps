@@ -8,6 +8,10 @@ from gps.algorithm.policy.lin_gauss_policy import LinearGaussianPolicy
 from gps.algorithm.policy.config import INIT_LG_PD, INIT_LG_LQR
 
 
+#SKLAW_NOTE: assume the initial trajectory to be optimized is
+#   {x_t = x0, u_t = 0 for all t}
+# They also have a mechanism for guessing the dynmaics without needing
+#   any trajectory samples
 def init_lqr(hyperparams):
     """
     Return initial gains for a time-varying linear Gaussian controller

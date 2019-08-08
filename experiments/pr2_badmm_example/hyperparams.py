@@ -70,6 +70,10 @@ for i in xrange(common['conditions']):
         common['target_filename'], 'trial_arm', str(i), 'target'
     )
 
+
+    #SKLAW_HACK: try to move targets closer to pr2
+    ee_pos_tgt -= [0.3, -0.2, 0]
+
     x0 = np.zeros(32)
     x0[:7] = ja_x0
     x0[14:(14+9)] = np.ndarray.flatten(

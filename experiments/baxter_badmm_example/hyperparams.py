@@ -63,6 +63,9 @@ for i in xrange(common['conditions']):
         common['target_filename'], 'trial_arm', str(i), 'initial'
     )
     ja_x0 = [0.0, -0.55, 0.0, 0.75, 0.0, 1.26, 0.0]
+    ee_pos_x0 = np.array([[0.6457965647670693, -0.8421422179890281, 0.05692453057710781]])
+
+    ee_rot_x0 = np.array([[-0.700080812403387, 0.7097837278827467, 0.07806353654226003], [0.7055368705851132, 0.7044192099989999, -0.07753257914806058], [-0.11002081780090142, 0.000797632281128606, -0.9939289629712806]])
 
     ja_aux, _, _ = load_pose_from_npz(
         common['target_filename'], 'auxiliary_arm', str(i), 'initial'
@@ -72,6 +75,9 @@ for i in xrange(common['conditions']):
     _, ee_pos_tgt, ee_rot_tgt = load_pose_from_npz(
         common['target_filename'], 'trial_arm', str(i), 'target'
     )
+
+    ee_pos_tgt -= [0.3, 0.3, 0]
+    ee_rot_tgt = np.array([[-0.9183327592979894, 0.27621409730918317, 0.2834972938985746], [0.297429466960146, 0.9541441924491688, 0.03383152670700853], [-0.26115255193841225, 0.11538904828100763, -0.9583760807495452]])
 
     x0 = np.zeros(32)
     x0[:7] = ja_x0
@@ -220,9 +226,11 @@ config = {
     'verbose_trials': 0,
     'verbose_policy_trials': 1,
     'agent': agent,
-    'gui_on': False,
+    'gui_on': True,
     'algorithm': algorithm,
     'num_samples': 5,
+    'use_gpu':True,
+    'gpu_id': 0,
 }
 
 common['info'] = generate_experiment_info(config)
