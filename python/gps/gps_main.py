@@ -295,16 +295,24 @@ def main():
                         help='silent debug print outs')
     parser.add_argument('-q', '--quit', action='store_true',
                         help='quit GUI automatically when finished')
+    parser.add_argument('--experiment-name-is-path-to-exp-dir', dest="exp_dir_given", default=False, action='store_true',
+                        help='indicates the experiment name given is the path to experiment directory')
     args = parser.parse_args()
 
-    exp_name = args.experiment
     resume_training_itr = args.resume
     test_policy_N = args.policy
 
-    from gps import __file__ as gps_filepath
-    gps_filepath = os.path.abspath(gps_filepath)
-    gps_dir = '/'.join(str.split(gps_filepath, '/')[:-3]) + '/'
-    exp_dir = gps_dir + 'experiments/' + exp_name + '/'
+    if not args.exp_dir_given:
+        exp_name = args.experiment
+        from gps import __file__ as gps_filepath
+        gps_filepath = os.path.abspath(gps_filepath)
+        gps_dir = '/'.join(str.split(gps_filepath, '/')[:-3]) + '/'
+        exp_dir = gps_dir + 'experiments/' + exp_name + '/'
+    else:
+        from os.path import dirname, realpath
+        exp_name = dirname(realpath(args.experiment))
+        exp_dir = args.experiment
+
     hyperparams_file = exp_dir + 'hyperparams.py'
 
     if args.silent:
