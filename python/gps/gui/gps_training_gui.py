@@ -35,6 +35,8 @@ from gps.proto.gps_pb2 import END_EFFECTOR_POINTS
 from gps.algorithm.algorithm_badmm import AlgorithmBADMM
 from gps.algorithm.algorithm_mdgps import AlgorithmMDGPS
 
+from itertools import chain
+
 class GPSTrainingGUI(object):
 
     def __init__(self, hyperparams):
@@ -364,10 +366,11 @@ class GPSTrainingGUI(object):
         based on the minimum and maximum xyz values across all samples.
         """
         all_eept = np.empty((0, 3))
-        sample_lists = traj_sample_lists
         if pol_sample_lists:
-            sample_lists += pol_sample_lists
-        for sample_list in sample_lists:
+            tmp_iterator = chain(traj_sample_lists, pol_sample_lists)
+        else:
+            tmp_iterator = traj_sample_lists
+        for sample_list in tmp_iterator:
             for sample in sample_list.get_samples():
                 ee_pt = sample.get(END_EFFECTOR_POINTS)
                 for i in range(ee_pt.shape[1]/3):
