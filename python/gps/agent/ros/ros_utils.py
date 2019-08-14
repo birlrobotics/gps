@@ -1,12 +1,13 @@
 """ This file defines utilities for the ROS agents. """
 import numpy as np
-
+import tempfile
+import pdb
 import rospy
-
+import pickle
 from gps.algorithm.policy.lin_gauss_policy import LinearGaussianPolicy
 from gps_agent_pkg.msg import ControllerParams, LinGaussParams, TfParams, CaffeParams, TfActionCommand
 from gps.sample.sample import Sample
-from gps.proto.gps_pb2 import LIN_GAUSS_CONTROLLER, CAFFE_CONTROLLER, TF_CONTROLLER
+from gps.proto.gps_pb2 import LIN_GAUSS_CONTROLLER, CAFFE_CONTROLLER, TF_CONTROLLER, POLICY_PKL_FILE
 import logging
 LOGGER = logging.getLogger(__name__)
 try:
@@ -66,7 +67,13 @@ def policy_to_msg(policy, noise):
         msg.tf = TfParams()
         msg.tf.dU = policy.dU
     else:
-        raise NotImplementedError("Caffe not imported or Unknown policy object: %s" % policy)
+        rospy.logwarn("Caffe not imported or Unknown policy object: %s. But we will pickle it then send pickle file path" % policy)
+        f = tempfile.NamedTemporaryFile(delete=False, suffix='.pkl')
+        msg.controller_to_execute = POLICY_PKL_FILE
+        pickle.dump(policy, f)
+        f.close()
+        msg.pkl_file_path = f.name
+
     return msg
 
 
