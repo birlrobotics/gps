@@ -172,7 +172,7 @@ class AgentROS(Agent):
         trial_command.ee_points_tgt = \
                 self._hyperparams['ee_points_tgt'][condition].tolist()
         trial_command.state_datatypes = self._hyperparams['state_include']
-        trial_command.obs_datatypes = self._hyperparams['state_include']
+        trial_command.obs_datatypes = self._hyperparams['obs_include']
 
         if self.use_tf is False:
             sample_msg = self._trial_service.publish_and_wait(
